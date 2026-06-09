@@ -1,0 +1,79 @@
+══════════════════════════════════════════════
+  BOULANGERIE LE REPÈRE — Démarrage du projet
+══════════════════════════════════════════════
+
+PRÉREQUIS : Node.js doit être installé sur votre machine.
+→ Télécharger gratuitement : https://nodejs.org  (version LTS recommandée)
+
+──────────────────────────────────────────────
+ÉTAPES D'INSTALLATION (à faire une seule fois)
+──────────────────────────────────────────────
+
+1. Ouvrir un terminal (PowerShell ou Invite de commandes)
+
+2. Se placer dans le dossier du projet :
+   cd "C:\Users\ELEONORE\Desktop\compte rendu de gestion\boulangerie-le-repere"
+
+3. Installer les dépendances :
+   npm install
+
+──────────────────────────────────────────────
+LANCER LE SITE EN LOCAL (mode développement)
+──────────────────────────────────────────────
+
+   npm run dev
+
+   → Le site s'ouvre sur : http://localhost:5173
+
+──────────────────────────────────────────────
+CONSTRUIRE LE SITE POUR LA MISE EN LIGNE
+──────────────────────────────────────────────
+
+   npm run build
+
+   → Les fichiers finaux seront dans le dossier "dist/"
+   → Ce dossier est à uploader chez votre hébergeur
+
+──────────────────────────────────────────────
+STRUCTURE DU PROJET
+──────────────────────────────────────────────
+
+boulangerie-le-repere/
+├── index.html              ← Point d'entrée HTML
+├── package.json            ← Dépendances du projet
+├── tailwind.config.js      ← Configuration du design
+├── vite.config.js          ← Configuration du bundler
+├── public/
+│   └── favicon.svg         ← Icône de l'onglet
+└── src/
+    ├── main.js             ← Entrée Vue.js + Router
+    ├── style.css           ← Styles globaux (Tailwind)
+    ├── App.vue             ← Layout principal
+    ├── components/
+    │   ├── NavBar.vue      ← Barre de navigation (fixe, responsive)
+    │   └── SiteFooter.vue  ← Pied de page
+    └── views/
+        ├── HomeView.vue            ← Page Accueil
+        ├── PainPatisseriesView.vue ← Page Pain & Pâtisseries
+        ├── SnackingTraiteurView.vue ← Page Snacking & Traiteur
+        ├── ContactView.vue         ← Page Contact + horaires + map
+        ├── PolitiqueView.vue       ← Politique de confidentialité
+        ├── CGVView.vue             ← Conditions générales
+        └── RGPDView.vue            ← RGPD
+
+──────────────────────────────────────────────
+PERSONNALISATION
+──────────────────────────────────────────────
+
+• Remplacer les photos : modifier les URLs "images.unsplash.com" dans
+  chaque fichier .vue par vos propres photos (mettre vos images dans public/)
+
+• Modifier les textes : ouvrir le fichier .vue correspondant à la page
+
+• Changer les couleurs : éditer tailwind.config.js (section "colors")
+
+• Lien Facebook : remplacer "https://www.facebook.com" par l'URL exacte
+  de votre page dans SiteFooter.vue et ContactView.vue
+
+• Google Maps : dans ContactView.vue, remplacer l'URL de l'iframe par
+  l'embed URL réelle (Google Maps → Partager → Intégrer)
