@@ -119,56 +119,57 @@
 </template>
 
 <script setup>
+const base = import.meta.env.BASE_URL
 const gateaux = [
   {
     nom: 'Éclairs au Chocolat',
     desc: 'Éclairs maison, glaçage chocolat, éclats de feuillantine dorée.',
-    img: '/images/eclairs.jpg',
+    img: base + 'images/eclairs.jpg',
   },
   {
     nom: 'Petits Gâteaux & Choux',
     desc: 'Plateau gourmand : choux, religieuses, mignardises aux fruits rouges.',
-    img: '/images/petits-gateaux.jpg',
+    img: base + 'images/petits-gateaux.jpg',
   },
   {
     nom: 'Casse-Noisette',
     desc: 'Feuilleté praliné, bavarois chocolat et praliné, génoise chocolat.',
-    img: '/images/petites-patisseries.jpg',
+    img: base + 'images/petites-patisseries.jpg',
   },
   {
     nom: 'Carapoire',
     desc: 'Bavarois poire et caramel, génoise.',
-    img: '/images/eclairs-chocolat.jpg',
+    img: base + 'images/eclairs-chocolat.jpg',
   },
   {
     nom: 'Feuilletine Framboise',
     desc: 'Feuilleté praliné, bavarois chocolat blanc et framboise, génoise.',
-    img: '/images/entremets-framboise.jpg',
+    img: base + 'images/entremets-framboise.jpg',
   },
   {
     nom: 'Forêt Noire',
     desc: 'Ganache chocolat, chantilly, cerise griotte, génoise chocolat.',
-    img: '/images/gateau-chocolat.jpg',
+    img: base + 'images/gateau-chocolat.jpg',
   },
   {
     nom: 'Trois Chocolats',
     desc: 'Bavarois chocolat blanc, lait et noir, génoise chocolat.',
-    img: '/images/trois-chocolats.jpg',
+    img: base + 'images/trois-chocolats.jpg',
   },
   {
     nom: 'Tropiko',
     desc: 'Bavarois passion, biscuit coco, miroir mangue.',
-    img: '/images/entremet-tropical.jpg',
+    img: base + 'images/entremet-tropical.jpg',
   },
   {
     nom: 'Fragola',
     desc: 'Bavarois fraise, génoise pistache.',
-    img: '/images/tarte-fraises.jpg',
+    img: base + 'images/tarte-fraises.jpg',
   },
   {
     nom: 'Fraisoffee',
     desc: 'Mousse mascarpone chantilly, fraises ou framboises, spéculos.',
-    img: '/images/petites-patisseries.jpg',
+    img: base + 'images/petites-patisseries.jpg',
   },
 ]
 

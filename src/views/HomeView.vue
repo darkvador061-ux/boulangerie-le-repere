@@ -247,12 +247,13 @@ const specialites = [
   },
 ]
 
+const base = import.meta.env.BASE_URL
 const galerie = [
-  { src: '/images/petites-patisseries.jpg', alt: 'Plateau de petites pâtisseries' },
-  { src: '/images/eclairs-chocolat.jpg',    alt: 'Éclairs au chocolat maison' },
-  { src: '/images/snacking-vitrine.jpg',    alt: 'Vitrine snacking de la boulangerie' },
-  { src: '/images/sandwiches.jpg',          alt: 'Sandwichs gourmands' },
-  { src: '/images/piece-montee.webp',       alt: 'Pièce montée de mariage' },
+  { src: base + 'images/petites-patisseries.jpg', alt: 'Plateau de petites pâtisseries' },
+  { src: base + 'images/eclairs-chocolat.jpg',    alt: 'Éclairs au chocolat maison' },
+  { src: base + 'images/snacking-vitrine.jpg',    alt: 'Vitrine snacking de la boulangerie' },
+  { src: base + 'images/sandwiches.jpg',          alt: 'Sandwichs gourmands' },
+  { src: base + 'images/piece-montee.webp',       alt: 'Pièce montée de mariage' },
 ]
 
 const communes = COMMUNES

@@ -156,10 +156,11 @@ const formules = [
   },
 ]
 
+const base = import.meta.env.BASE_URL
 const galerieSnacking = [
-  { src: '/images/sandwiches.jpg',        alt: 'Sandwichs gourmands du Repère' },
-  { src: '/images/snacking-vitrine.jpg',  alt: 'Vitrine snacking de la boulangerie' },
-  { src: '/images/petites-patisseries.jpg', alt: 'Pâtisseries maison du Repère' },
-  { src: '/images/photo-interieur.avif',  alt: 'Intérieur de la boulangerie Le Repère' },
+  { src: base + 'images/sandwiches.jpg',          alt: 'Sandwichs gourmands du Repère' },
+  { src: base + 'images/snacking-vitrine.jpg',    alt: 'Vitrine snacking de la boulangerie' },
+  { src: base + 'images/petites-patisseries.jpg', alt: 'Pâtisseries maison du Repère' },
+  { src: base + 'images/photo-interieur.avif',    alt: 'Intérieur de la boulangerie Le Repère' },
 ]
 </script>
