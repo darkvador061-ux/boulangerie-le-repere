@@ -1,7 +1,7 @@
 <template>
   <header
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-    :class="scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'"
+    :class="isDark ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm shadow-sm'"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
@@ -15,10 +15,10 @@
           />
           <div class="leading-tight">
             <p class="font-serif font-bold text-2xl leading-none"
-               :class="scrolled ? 'text-brun-900 group-hover:text-rose-500' : 'text-white group-hover:text-rose-300'"
+               :class="isDark ? 'text-white group-hover:text-rose-300' : 'text-brun-900 group-hover:text-rose-500'"
                style="transition: color 0.3s">Le Repère</p>
             <p class="text-xs font-sans tracking-[0.2em] uppercase mt-0.5"
-               :class="scrolled ? 'text-brun-400' : 'text-white/70'">Boulangerie Artisanale</p>
+               :class="isDark ? 'text-white/70' : 'text-brun-400'">Boulangerie Artisanale</p>
           </div>
         </RouterLink>
 
@@ -29,9 +29,9 @@
             :key="link.to"
             :to="link.to"
             class="font-sans font-medium text-sm transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:transition-all hover:after:w-full"
-            :class="scrolled
-              ? 'text-brun-700 hover:text-rose-500 after:bg-rose-500'
-              : 'text-white/90 hover:text-rose-300 after:bg-rose-300'"
+            :class="isDark
+              ? 'text-white/90 hover:text-rose-300 after:bg-rose-300'
+              : 'text-brun-700 hover:text-rose-500 after:bg-rose-500'"
             active-class="!text-rose-500 after:!w-full"
           >
             {{ link.label }}
@@ -44,7 +44,7 @@
         <!-- Mobile burger -->
         <button
           class="md:hidden p-2 rounded-lg"
-          :class="scrolled ? 'text-brun-900' : 'text-white'"
+          :class="isDark ? 'text-white' : 'text-brun-900'"
           @click="menuOpen = !menuOpen"
           aria-label="Menu"
         >
@@ -79,55 +79,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useLogoCanvas } from '../composables/useLogoCanvas.js'
+import { NAV_LINKS } from '../data/config.js'
 
 const scrolled  = ref(false)
 const menuOpen  = ref(false)
-const logoUrl   = ref('/images/logo.avif')
+const route     = useRoute()
+const { logoUrl } = useLogoCanvas()
 
-const navLinks = [
-  { to: '/',                  label: 'Accueil' },
-  { to: '/pain-patisseries',  label: 'Pain & Pâtisseries' },
-  { to: '/snacking-traiteur', label: 'Snacking & Traiteur' },
-  { to: '/contact',           label: 'Contact' },
-]
+const navLinks = NAV_LINKS
+
+const isDark = computed(() => route.path === '/' && !scrolled.value)
 
 function onScroll() {
   scrolled.value = window.scrollY > 40
 }
 
-function removeLogoBg() {
-  const img = new Image()
-  img.onload = () => {
-    try {
-      const canvas = document.createElement('canvas')
-      canvas.width  = img.naturalWidth
-      canvas.height = img.naturalHeight
-      const ctx = canvas.getContext('2d')
-      ctx.drawImage(img, 0, 0)
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-      const d = imageData.data
-      for (let i = 0; i < d.length; i += 4) {
-        const r = d[i], g = d[i + 1], b = d[i + 2]
-        const avg  = (r + g + b) / 3
-        const span = Math.max(r, g, b) - Math.min(r, g, b)
-        // Cible : fond ovale gris-bleu foncé (#4A4F5E ≈ 74,79,94)
-        // Exclure : texte rose (r >> g), épis blancs (avg > 150)
-        if (avg < 135 && span < 55 && !(r > g + 35)) {
-          d[i + 3] = 0
-        }
-      }
-      ctx.putImageData(imageData, 0, 0)
-      logoUrl.value = canvas.toDataURL('image/png')
-    } catch (_) { /* conserve l'original si canvas bloqué */ }
-  }
-  img.src = '/images/logo.avif'
-}
-
-onMounted(() => {
-  removeLogoBg()
-  window.addEventListener('scroll', onScroll)
-})
+onMounted(() => window.addEventListener('scroll', onScroll))
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 </script>
 

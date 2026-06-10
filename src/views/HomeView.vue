@@ -1,65 +1,98 @@
 <template>
   <!-- ===== HERO ===== -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <video
-      class="absolute inset-0 w-full h-full object-cover"
-      autoplay loop muted playsinline
-      poster="/images/facade.jpg"
-    >
-      <source src="/videos/bread-oven.mp4" type="video/mp4" />
-      <source src="/videos/bakery-hero.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 bg-brun-900/65" />
+  <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
 
-    <div class="relative w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 flex flex-col items-center text-center">
+    <!-- Image de fond avec parallax léger -->
+    <div class="hero-bg absolute inset-0"
+      style="background-image: url('/images/facade.jpg'); background-size: cover; background-position: center;">
+    </div>
+
+    <!-- Superposition dégradée chaude -->
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(42,22,8,0.82) 0%, rgba(90,40,5,0.70) 50%, rgba(42,22,8,0.88) 100%);" />
+
+    <!-- Halo doré décoratif -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full hero-glow" />
+
+    <!-- Grains de blé flottants -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <span v-for="n in 8" :key="n" class="grain" :style="grainStyle(n)">🌾</span>
+    </div>
+
+    <!-- Contenu -->
+    <div class="relative w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 flex flex-col items-center text-center hero-content">
+
+      <!-- Badge artisan -->
+      <div class="hero-badge flex items-center gap-3 mb-10 px-5 py-2 rounded-full border border-dore-400/40 bg-white/5 backdrop-blur-sm">
+        <span class="text-dore-400 text-sm">✦</span>
+        <p class="text-dore-300 font-sans text-xs font-semibold tracking-[0.3em] uppercase">
+          Boulangerie Artisanale &nbsp;·&nbsp; Isle-en-Dodon
+        </p>
+        <span class="text-dore-400 text-sm">✦</span>
+      </div>
+
+      <!-- Titre principal -->
+      <div class="hero-title mb-6">
+        <p class="font-serif font-light text-white/80 leading-none mb-0"
+           style="font-size: clamp(2rem, 6vw, 4.5rem); letter-spacing: 0.12em;">
+          LA BOULANGERIE
+        </p>
+        <h1 class="font-serif font-bold leading-none"
+            style="font-size: clamp(6rem, 18vw, 13rem); letter-spacing: -0.02em; color: #D4831A; text-shadow: 0 0 80px rgba(212,131,26,0.5), 0 4px 40px rgba(212,131,26,0.3);">
+          Le Repère
+        </h1>
+        <p class="font-serif italic text-white/60 mt-1"
+           style="font-size: clamp(1rem, 2.5vw, 1.5rem); letter-spacing: 0.05em;">
+          — Façonné avec passion, chaque matin —
+        </p>
+      </div>
+
+      <!-- Séparateur doré -->
+      <div class="flex items-center gap-5 mb-8 w-64 hero-divider">
+        <span class="flex-1 h-px bg-gradient-to-r from-transparent to-dore-400/60" />
+        <span class="text-dore-400 text-lg">✦</span>
+        <span class="flex-1 h-px bg-gradient-to-l from-transparent to-dore-400/60" />
+      </div>
 
       <!-- Accroche -->
-      <p class="text-rose-300 font-sans text-xs font-medium tracking-[0.35em] uppercase mb-8">
-        Boulangerie Artisanale &nbsp;·&nbsp; Isle-en-Dodon
+      <p class="hero-desc text-white/75 text-lg leading-relaxed mb-12 max-w-xl font-light">
+        Pains croustillants, pâtisseries généreuses et snacking savoureux —
+        <strong class="text-dore-300 font-medium">tout fait maison</strong>, servi chaud dès 6h30.
       </p>
 
-      <!-- Ligne décorative -->
-      <div class="flex items-center gap-4 mb-8 w-52">
-        <span class="flex-1 h-px bg-dore-400/50" />
-        <span class="text-rose-400 text-base">✦</span>
-        <span class="flex-1 h-px bg-dore-400/50" />
+      <!-- CTA -->
+      <div class="hero-cta flex flex-wrap gap-5 justify-center mb-12">
+        <RouterLink to="/pain-patisseries"
+          class="group relative overflow-hidden px-8 py-4 rounded-full font-semibold text-white transition-all duration-300"
+          style="background: linear-gradient(135deg, #D4831A, #E8A040); box-shadow: 0 8px 32px rgba(212,131,26,0.45);">
+          <span class="relative z-10 flex items-center gap-2">
+            🥖 Découvrir nos produits
+          </span>
+          <div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+        </RouterLink>
+        <RouterLink to="/contact"
+          class="group px-8 py-4 rounded-full font-semibold text-white border border-white/40 hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+          📍 Nous trouver
+        </RouterLink>
       </div>
 
-      <!-- Titre -->
-      <h1 class="font-serif font-bold text-white leading-none mb-1"
-          style="font-size: clamp(3.5rem, 10vw, 7rem); letter-spacing: -0.01em;">
-        Le
-      </h1>
-      <h1 class="font-serif font-bold leading-none mb-8"
-          style="font-size: clamp(5rem, 15vw, 11rem); letter-spacing: -0.02em; color: #D4831A; text-shadow: 0 4px 40px rgba(212,131,26,0.35);">
-        Repère
-      </h1>
-
-      <!-- Ligne décorative basse -->
-      <div class="flex items-center gap-4 mb-8 w-52">
-        <span class="flex-1 h-px bg-dore-400/50" />
-        <span class="text-rose-400 text-base">✦</span>
-        <span class="flex-1 h-px bg-dore-400/50" />
-      </div>
-
-      <p class="text-brun-200 text-lg leading-relaxed mb-10 max-w-lg">
-        Pâtisseries, pains et repas rapides façonnés chaque matin avec passion.
-        Savourez l'artisanat dans toute sa modernité.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <RouterLink to="/pain-patisseries" class="btn-primary">
-          Découvrir nos produits
-        </RouterLink>
-        <RouterLink to="/contact" class="btn-outline border-white text-white hover:bg-white hover:text-brun-900">
-          Nous trouver
-        </RouterLink>
+      <!-- Badges de confiance -->
+      <div class="flex flex-wrap justify-center gap-4 hero-trust">
+        <span class="flex items-center gap-2 text-white/60 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10">
+          ⏰ Ouvert dès 6h30
+        </span>
+        <span class="flex items-center gap-2 text-white/60 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10">
+          🚚 Livraison à domicile
+        </span>
+        <span class="flex items-center gap-2 text-white/60 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10">
+          🎂 Commandes sur mesure
+        </span>
       </div>
     </div>
 
     <!-- Scroll hint -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 text-xs">
-      <span class="tracking-widest uppercase">Défiler</span>
-      <span class="w-0.5 h-8 bg-white/30 animate-pulse" />
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 text-xs">
+      <span class="tracking-widest uppercase text-xs">Défiler</span>
+      <span class="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
     </div>
   </section>
 
@@ -162,11 +195,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <img
-            src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&auto=format&fit=crop"
-            alt="Livraison de pain à domicile"
-            class="rounded-2xl shadow-xl w-full h-80 object-cover"
-          />
+          <DeliveryMap />
         </div>
         <div>
           <p class="text-rose-500 font-medium text-sm tracking-widest uppercase mb-3">Service exclusif</p>
@@ -184,7 +213,7 @@
               📍 {{ commune }}
             </span>
           </div>
-          <a href="tel:0561896070" class="btn-primary">Appeler pour commander</a>
+          <RouterLink to="/contact" class="btn-primary">Appeler pour commander</RouterLink>
         </div>
       </div>
     </div>
@@ -192,6 +221,9 @@
 </template>
 
 <script setup>
+import { COMMUNES } from '../data/config.js'
+import DeliveryMap from '../components/DeliveryMap.vue'
+
 const specialites = [
   {
     icon: '🥖',
@@ -223,5 +255,73 @@ const galerie = [
   { src: '/images/piece-montee.webp',       alt: 'Pièce montée de mariage' },
 ]
 
-const communes = ['Isle-en-Dodon', 'Couielles', 'Riolas', 'Cazac', 'Labastide', 'Fabas', 'Saint-Frajou']
+const communes = COMMUNES
+
+function grainStyle(n) {
+  const positions = [
+    { left: '8%',  top: '20%', delay: '0s',    duration: '6s',  size: '1.4rem', opacity: 0.12 },
+    { left: '88%', top: '15%', delay: '1.2s',  duration: '8s',  size: '1rem',   opacity: 0.10 },
+    { left: '75%', top: '70%', delay: '2.4s',  duration: '7s',  size: '1.6rem', opacity: 0.08 },
+    { left: '15%', top: '75%', delay: '0.8s',  duration: '9s',  size: '1.2rem', opacity: 0.11 },
+    { left: '50%', top: '8%',  delay: '3s',    duration: '6.5s',size: '0.9rem', opacity: 0.09 },
+    { left: '92%', top: '50%', delay: '1.8s',  duration: '7.5s',size: '1.3rem', opacity: 0.10 },
+    { left: '5%',  top: '50%', delay: '4s',    duration: '8.5s',size: '1.1rem', opacity: 0.08 },
+    { left: '60%', top: '88%', delay: '2s',    duration: '6s',  size: '1.5rem', opacity: 0.09 },
+  ]
+  const p = positions[(n - 1) % positions.length]
+  return {
+    left: p.left, top: p.top,
+    fontSize: p.size, opacity: p.opacity,
+    animationDelay: p.delay, animationDuration: p.duration,
+  }
+}
 </script>
+
+<style scoped>
+.hero-bg {
+  transform-origin: center;
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+.hero-glow {
+  background: radial-gradient(circle, rgba(212,131,26,0.18) 0%, transparent 70%);
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
+  to   { opacity: 1;   transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.grain {
+  position: absolute;
+  animation: float linear infinite;
+  user-select: none;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-18px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.hero-content > * {
+  animation: fadeUp 0.8s ease both;
+}
+.hero-badge   { animation-delay: 0.1s; }
+.hero-title   { animation-delay: 0.25s; }
+.hero-divider { animation-delay: 0.45s; }
+.hero-desc    { animation-delay: 0.55s; }
+.hero-cta     { animation-delay: 0.70s; }
+.hero-trust   { animation-delay: 0.85s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>

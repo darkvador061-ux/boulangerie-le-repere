@@ -3,7 +3,7 @@
   <section class="relative pt-32 pb-20 bg-brun-900 overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center opacity-30"
-      style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&auto=format&fit=crop')"
+      style="background-image: url('/images/photo-interieur.avif')"
     />
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <p class="text-rose-400 text-sm font-medium tracking-widest uppercase mb-3">Notre gamme</p>
@@ -57,9 +57,9 @@
                 Mariages, anniversaires, baptêmes… Nous créons votre pièce montée ou gâteau personnalisé selon vos envies et votre budget.
               </p>
             </div>
-            <a href="tel:0561896070" class="btn-primary self-start whitespace-nowrap">
+            <RouterLink to="/contact" class="btn-primary self-start whitespace-nowrap">
               📞 Nous contacter
-            </a>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -83,30 +83,34 @@
               {{ pain }}
             </li>
           </ul>
-          <a href="tel:0561896070" class="btn-primary mt-8 inline-block">
+          <RouterLink to="/contact" class="btn-primary mt-8 inline-block">
             Commander par téléphone
-          </a>
+          </RouterLink>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <img
-            src="https://images.unsplash.com/photo-1565197571598-9fc96e5e8e42?w=400&auto=format&fit=crop"
-            alt="Pain de campagne"
+            src="/images/photo-interieur.avif"
+            alt="Le fournil de la boulangerie Le Repère"
             class="rounded-2xl h-52 w-full object-cover"
+            loading="lazy"
           />
           <img
-            src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=400&auto=format&fit=crop"
-            alt="Baguette tradition"
+            src="/images/photo-vitrine.avif"
+            alt="Vitrine de la boulangerie Le Repère"
             class="rounded-2xl h-52 w-full object-cover mt-6"
+            loading="lazy"
           />
           <img
-            src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&auto=format&fit=crop"
-            alt="Pain aux céréales"
+            src="/images/facade.jpg"
+            alt="Devanture de la boulangerie Le Repère"
             class="rounded-2xl h-52 w-full object-cover"
+            loading="lazy"
           />
           <img
-            src="https://images.unsplash.com/photo-1587248720327-8eb72564be1e?w=400&auto=format&fit=crop"
-            alt="Pain complet"
+            src="/images/facade-nuit.jpg"
+            alt="La boulangerie Le Repère de nuit"
             class="rounded-2xl h-52 w-full object-cover mt-6"
+            loading="lazy"
           />
         </div>
       </div>
@@ -129,42 +133,42 @@ const gateaux = [
   {
     nom: 'Casse-Noisette',
     desc: 'Feuilleté praliné, bavarois chocolat et praliné, génoise chocolat.',
-    img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&auto=format&fit=crop',
+    img: '/images/petites-patisseries.jpg',
   },
   {
     nom: 'Carapoire',
     desc: 'Bavarois poire et caramel, génoise.',
-    img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&auto=format&fit=crop',
+    img: '/images/eclairs-chocolat.jpg',
   },
   {
     nom: 'Feuilletine Framboise',
     desc: 'Feuilleté praliné, bavarois chocolat blanc et framboise, génoise.',
-    img: 'https://images.unsplash.com/photo-1488477304112-4944851de03d?w=400&auto=format&fit=crop',
+    img: '/images/petites-patisseries.jpg',
   },
   {
     nom: 'Forêt Noire',
     desc: 'Ganache chocolat, chantilly, cerise griotte, génoise chocolat.',
-    img: 'https://images.unsplash.com/photo-1570145820259-b5b80c5c8bd6?w=400&auto=format&fit=crop',
+    img: '/images/eclairs-chocolat.jpg',
   },
   {
     nom: 'Trois Chocolats',
     desc: 'Bavarois chocolat blanc, lait et noir, génoise chocolat.',
-    img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=400&auto=format&fit=crop',
+    img: '/images/petits-gateaux.jpg',
   },
   {
     nom: 'Tropiko',
     desc: 'Bavarois passion, biscuit coco, miroir mangue.',
-    img: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop',
+    img: '/images/petites-patisseries.jpg',
   },
   {
     nom: 'Fragola',
     desc: 'Bavarois fraise, génoise pistache.',
-    img: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&auto=format&fit=crop',
+    img: '/images/petits-gateaux.jpg',
   },
   {
     nom: 'Fraisoffee',
     desc: 'Mousse mascarpone chantilly, fraises ou framboises, spéculos.',
-    img: 'https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=400&auto=format&fit=crop',
+    img: '/images/eclairs.jpg',
   },
 ]
 

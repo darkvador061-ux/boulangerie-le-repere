@@ -61,7 +61,7 @@
                 <h3 class="font-semibold text-brun-900 mb-3">Réseaux sociaux</h3>
                 <div class="flex gap-3">
                   <a
-                    href="https://www.facebook.com"
+                    :href="socialLinks.facebook"
                     target="_blank" rel="noopener"
                     class="flex items-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-medium px-4 py-2 rounded-full transition-colors"
                   >
@@ -69,7 +69,7 @@
                     Facebook
                   </a>
                   <a
-                    href="https://www.instagram.com/boulangerielerepere"
+                    :href="socialLinks.instagram"
                     target="_blank" rel="noopener"
                     class="flex items-center gap-2 bg-pink-50 hover:bg-pink-100 text-pink-700 text-sm font-medium px-4 py-2 rounded-full transition-colors"
                   >
@@ -96,6 +96,77 @@
           />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMULAIRE ===== -->
+  <section class="py-20 bg-brun-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-dore-500 text-sm font-medium tracking-widest uppercase mb-3">Écrivez-nous</p>
+        <h2 class="section-title">Envoyer un message</h2>
+        <p class="section-subtitle">Pour une commande spéciale, une question ou une demande de livraison.</p>
+      </div>
+
+      <!-- Message succès -->
+      <div v-if="formState === 'success'" class="text-center py-16 px-8 bg-white rounded-3xl shadow-sm">
+        <div class="text-5xl mb-4">✅</div>
+        <h3 class="font-serif text-2xl font-semibold text-brun-900 mb-2">Message envoyé !</h3>
+        <p class="text-brun-500 mb-6">Nous vous répondrons dans les plus brefs délais.</p>
+        <button @click="formState = 'idle'" class="btn-primary">Envoyer un autre message</button>
+      </div>
+
+      <!-- Formulaire -->
+      <form v-else @submit.prevent="submitForm" class="space-y-6 bg-white rounded-3xl p-8 md:p-10 shadow-sm">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-brun-700 mb-2">Nom *</label>
+            <input v-model="form.nom" type="text" required placeholder="Votre nom"
+              class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-brun-700 mb-2">Email *</label>
+            <input v-model="form.email" type="email" required placeholder="votre@email.fr"
+              class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900" />
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-brun-700 mb-2">Téléphone</label>
+            <input v-model="form.telephone" type="tel" placeholder="06 XX XX XX XX"
+              class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-brun-700 mb-2">Type de demande *</label>
+            <select v-model="form.type" required
+              class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900 bg-white">
+              <option value="" disabled>Choisir…</option>
+              <option>Commande spéciale</option>
+              <option>Pièce montée / Mariage</option>
+              <option>Livraison à domicile</option>
+              <option>Question générale</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-brun-700 mb-2">Message *</label>
+          <textarea v-model="form.message" required rows="5" placeholder="Décrivez votre demande…"
+            class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900 resize-none" />
+        </div>
+
+        <div v-if="formState === 'error'" class="text-red-600 text-sm bg-red-50 px-4 py-3 rounded-xl border border-red-200">
+          Une erreur est survenue. Réessayez ou appelez-nous directement au 05 61 89 60 70.
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+          <button type="submit" :disabled="formState === 'sending'"
+            class="btn-primary w-full sm:w-auto px-10 disabled:opacity-60 disabled:cursor-not-allowed">
+            {{ formState === 'sending' ? 'Envoi en cours…' : 'Envoyer le message' }}
+          </button>
+          <p class="text-xs text-brun-400">* Champs obligatoires</p>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -126,15 +197,30 @@
 </template>
 
 <script setup>
-const horaires = [
-  { jour: 'Lundi',    heure: '6h30 – 19h30' },
-  { jour: 'Mardi',   heure: '6h30 – 19h30' },
-  { jour: 'Mercredi',heure: 'Fermé', ferme: true },
-  { jour: 'Jeudi',   heure: '6h30 – 19h30' },
-  { jour: 'Vendredi',heure: '6h30 – 19h30' },
-  { jour: 'Samedi',  heure: '6h30 – 19h30' },
-  { jour: 'Dimanche',heure: '6h30 – 19h30' },
-]
+import { ref } from 'vue'
+import { COMMUNES, HORAIRES, SOCIAL_LINKS } from '../data/config.js'
 
-const communes = ['Isle-en-Dodon', 'Couielles', 'Riolas', 'Cazac', 'Labastide', 'Fabas', 'Saint-Frajou']
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/VOTRE_ID_FORMSPREE'
+
+const communes    = COMMUNES
+const horaires    = HORAIRES
+const socialLinks = SOCIAL_LINKS
+
+const formState = ref('idle') // idle | sending | success | error
+const form = ref({ nom: '', email: '', telephone: '', type: '', message: '' })
+
+async function submitForm() {
+  formState.value = 'sending'
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(form.value),
+    })
+    formState.value = res.ok ? 'success' : 'error'
+    if (res.ok) form.value = { nom: '', email: '', telephone: '', type: '', message: '' }
+  } catch {
+    formState.value = 'error'
+  }
+}
 </script>

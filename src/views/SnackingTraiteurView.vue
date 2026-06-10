@@ -3,7 +3,7 @@
   <section class="relative pt-32 pb-20 bg-brun-900 overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center opacity-30"
-      style="background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1600&auto=format&fit=crop')"
+      style="background-image: url('/images/snacking-vitrine.jpg')"
     />
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <p class="text-dore-400 text-sm font-medium tracking-widest uppercase mb-3">Sur place ou à emporter</p>
@@ -50,7 +50,7 @@
             Nos pizzas sont préparées avec une pâte maison et des ingrédients soigneusement sélectionnés.
             Un délice à déguster sur place ou à emporter !
           </p>
-          <a href="tel:0561896070" class="btn-primary">Réserver votre repas</a>
+          <RouterLink to="/contact" class="btn-primary">Réserver votre repas</RouterLink>
         </div>
         <div class="overflow-hidden rounded-2xl shadow-xl">
           <img
@@ -157,9 +157,9 @@ const formules = [
 ]
 
 const galerieSnacking = [
-  { src: '/images/sandwiches.jpg', alt: 'Sandwichs gourmands du Repère' },
-  { src: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&auto=format&fit=crop', alt: 'Salade fraîche' },
-  { src: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&auto=format&fit=crop', alt: 'Pizza maison' },
-  { src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&auto=format&fit=crop', alt: 'Café et viennoiserie' },
+  { src: '/images/sandwiches.jpg',        alt: 'Sandwichs gourmands du Repère' },
+  { src: '/images/snacking-vitrine.jpg',  alt: 'Vitrine snacking de la boulangerie' },
+  { src: '/images/petites-patisseries.jpg', alt: 'Pâtisseries maison du Repère' },
+  { src: '/images/photo-interieur.avif',  alt: 'Intérieur de la boulangerie Le Repère' },
 ]
 </script>
