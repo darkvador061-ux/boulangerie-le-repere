@@ -143,32 +143,32 @@ const gateaux = [
   {
     nom: 'Feuilletine Framboise',
     desc: 'Feuilleté praliné, bavarois chocolat blanc et framboise, génoise.',
-    img: '/images/petites-patisseries.jpg',
+    img: '/images/entremets-framboise.jpg',
   },
   {
     nom: 'Forêt Noire',
     desc: 'Ganache chocolat, chantilly, cerise griotte, génoise chocolat.',
-    img: '/images/eclairs-chocolat.jpg',
+    img: '/images/gateau-chocolat.jpg',
   },
   {
     nom: 'Trois Chocolats',
     desc: 'Bavarois chocolat blanc, lait et noir, génoise chocolat.',
-    img: '/images/petits-gateaux.jpg',
+    img: '/images/trois-chocolats.jpg',
   },
   {
     nom: 'Tropiko',
     desc: 'Bavarois passion, biscuit coco, miroir mangue.',
-    img: '/images/petites-patisseries.jpg',
+    img: '/images/entremet-tropical.jpg',
   },
   {
     nom: 'Fragola',
     desc: 'Bavarois fraise, génoise pistache.',
-    img: '/images/petits-gateaux.jpg',
+    img: '/images/tarte-fraises.jpg',
   },
   {
     nom: 'Fraisoffee',
     desc: 'Mousse mascarpone chantilly, fraises ou framboises, spéculos.',
-    img: '/images/eclairs.jpg',
+    img: '/images/petites-patisseries.jpg',
   },
 ]
 

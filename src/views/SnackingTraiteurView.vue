@@ -54,8 +54,8 @@
         </div>
         <div class="overflow-hidden rounded-2xl shadow-xl">
           <img
-            src="/images/sandwiches.jpg"
-            alt="Sandwichs gourmands de la vitrine"
+            src="/images/pizza-artisanale.jpg"
+            alt="Pizza artisanale de la boulangerie Le Repère"
             class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
           />
         </div>
