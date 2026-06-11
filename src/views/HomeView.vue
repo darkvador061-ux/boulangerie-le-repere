@@ -77,13 +77,13 @@
 
       <!-- Badges de confiance -->
       <div class="flex flex-wrap justify-center gap-4 hero-trust">
-        <span class="flex items-center gap-2 text-white/60 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10">
+        <span class="flex items-center gap-2 text-white/80 text-sm bg-white/[0.07] px-5 py-2.5 rounded-full border border-white/15 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.12] hover:border-dore-400/50 hover:text-white">
           ⏰ Ouvert dès 6h30
         </span>
-        <span class="flex items-center gap-2 text-white/60 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10">
+        <span class="flex items-center gap-2 text-white/80 text-sm bg-white/[0.07] px-5 py-2.5 rounded-full border border-white/15 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.12] hover:border-dore-400/50 hover:text-white">
           🚚 Livraison à domicile
         </span>
-        <span class="flex items-center gap-2 text-white/60 text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10">
+        <span class="flex items-center gap-2 text-white/80 text-sm bg-white/[0.07] px-5 py-2.5 rounded-full border border-white/15 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.12] hover:border-dore-400/50 hover:text-white">
           🎂 Commandes sur mesure
         </span>
       </div>
@@ -91,7 +91,6 @@
 
     <!-- Scroll hint -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 text-xs">
-      <span class="tracking-widest uppercase text-xs">Défiler</span>
       <span class="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
     </div>
   </section>
@@ -108,12 +107,23 @@
     </div>
   </section>
 
+  <!-- Vague : bandeau doré → À Propos -->
+  <div class="bg-dore-500 overflow-hidden leading-[0]">
+    <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 md:h-16 block">
+      <path d="M0,48 C400,8 800,64 1200,28 C1320,16 1400,40 1440,48 L1440,64 L0,64 Z" style="fill: #F3F4F6;" />
+    </svg>
+  </div>
+
   <!-- ===== À PROPOS ===== -->
   <section class="py-24 bg-brun-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="text-rose-500 font-medium text-sm tracking-widest uppercase mb-3">Notre histoire</p>
+        <div class="reveal-left">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+            <span class="text-dore-400 text-sm">✦</span>
+            <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Notre histoire</p>
+          </div>
           <h2 class="section-title">Tradition &amp; Créativité,<br />au cœur de votre village</h2>
           <p class="text-brun-600 leading-relaxed mb-6">
             Au Repère, nous allions le charme de l'artisanat traditionnel à une approche
@@ -125,15 +135,22 @@
           </p>
           <RouterLink to="/contact" class="btn-primary">Nous rendre visite</RouterLink>
         </div>
-        <div class="relative">
+        <div class="relative reveal-right">
           <img
             src="/images/facade-nuit.jpg"
             alt="Devanture de la Boulangerie Le Repère de nuit"
             class="rounded-2xl shadow-xl w-full object-cover h-96"
           />
-          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-5 max-w-xs hidden md:block">
-            <p class="font-serif text-brun-900 font-semibold text-lg">Livraison à domicile</p>
-            <p class="text-brun-500 text-sm mt-1">
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-[0_20px_45px_-12px_rgba(24,27,40,0.28)] border border-brun-100 p-6 max-w-xs hidden md:block">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-11 h-11 rounded-xl bg-gradient-to-br from-dore-400 to-dore-600 flex items-center justify-center text-white shrink-0 shadow-md shadow-dore-500/30">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
+                </svg>
+              </span>
+              <p class="font-serif text-brun-900 font-bold text-lg leading-tight">Livraison<br />à domicile</p>
+            </div>
+            <p class="text-brun-500 text-sm leading-relaxed">
               Isle-en-Dodon · Couielles · Riolas · Cazac · Labastide · Fabas · Saint-Frajou
             </p>
           </div>
@@ -145,17 +162,37 @@
   <!-- ===== OFFRES ===== -->
   <section class="py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-rose-500 font-medium text-sm tracking-widest uppercase mb-3">Ce que nous proposons</p>
-      <h2 class="section-title">Nos Spécialités</h2>
-      <p class="section-subtitle">Du pain frais du matin aux formules midi, tout est fait maison.</p>
+      <div class="reveal">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+          <span class="text-dore-400 text-sm">✦</span>
+          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Ce que nous proposons</p>
+          <span class="text-dore-400 text-sm">✦</span>
+          <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+        </div>
+        <h2 class="section-title">Nos Spécialités</h2>
+        <p class="section-subtitle">Du pain frais du matin aux formules midi, tout est fait maison.</p>
+      </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div v-for="item in specialites" :key="item.title" class="card p-6 text-left group">
-          <div class="w-14 h-14 rounded-2xl bg-brun-50 flex items-center justify-center mb-5 group-hover:bg-dore-500 transition-colors">
-            <span class="text-2xl">{{ item.icon }}</span>
+        <div
+          v-for="(item, i) in specialites"
+          :key="item.title"
+          class="group relative bg-white rounded-3xl p-7 text-left overflow-hidden reveal-scale border border-brun-100/70 transition-all duration-500 hover:-translate-y-2 hover:border-dore-200 hover:shadow-[0_28px_56px_-16px_rgba(212,131,26,0.28)]"
+          :data-delay="i * 0.1"
+        >
+          <!-- Numéro en filigrane -->
+          <span class="absolute -top-4 right-1 font-serif text-8xl font-bold text-brun-50 select-none pointer-events-none transition-colors duration-500 group-hover:text-dore-100">
+            0{{ i + 1 }}
+          </span>
+          <!-- Icône -->
+          <div class="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-dore-50 to-brun-50 transition-all duration-500 group-hover:from-dore-500 group-hover:to-dore-600 group-hover:shadow-lg group-hover:shadow-dore-500/30 group-hover:scale-105">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-dore-500 transition-all duration-500 group-hover:text-white group-hover:scale-110" v-html="item.svg" />
           </div>
-          <h3 class="font-serif text-lg font-semibold text-brun-900 mb-2">{{ item.title }}</h3>
-          <p class="text-brun-500 text-sm leading-relaxed">{{ item.desc }}</p>
+          <h3 class="relative font-serif text-xl font-bold text-brun-900 mb-2.5">{{ item.title }}</h3>
+          <p class="relative text-brun-500 text-sm leading-relaxed mb-5">{{ item.desc }}</p>
+          <!-- Ligne d'accent animée -->
+          <span class="block h-[3px] w-9 bg-dore-400 rounded-full transition-all duration-500 group-hover:w-20 group-hover:bg-dore-500" />
         </div>
       </div>
     </div>
@@ -164,23 +201,39 @@
   <!-- ===== GALERIE PRODUITS ===== -->
   <section class="py-24 bg-brun-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <p class="text-rose-500 font-medium text-sm tracking-widest uppercase mb-3">Coup d'œil</p>
+      <div class="text-center mb-14 reveal">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+          <span class="text-dore-400 text-sm">✦</span>
+          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Coup d'œil</p>
+          <span class="text-dore-400 text-sm">✦</span>
+          <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+        </div>
         <h2 class="section-title">Nos créations du moment</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div
           v-for="(img, i) in galerie"
           :key="i"
-          class="overflow-hidden rounded-2xl"
+          class="group relative overflow-hidden rounded-2xl reveal-scale"
           :class="i === 0 ? 'row-span-2' : ''"
+          :data-delay="i * 0.1"
         >
           <img
             :src="img.src"
             :alt="img.alt"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-cover transition-transform ease-out duration-[1200ms] group-hover:scale-110"
             :class="i === 0 ? 'h-full min-h-64' : 'h-52'"
           />
+          <!-- Voile dégradé -->
+          <div class="absolute inset-0 bg-gradient-to-t from-brun-900/85 via-brun-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <!-- Légende -->
+          <div class="absolute inset-x-0 bottom-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+            <span class="flex items-center gap-2.5 text-white font-medium text-sm leading-snug">
+              <span class="w-1.5 h-1.5 rounded-full bg-dore-400 shrink-0" />
+              {{ img.alt }}
+            </span>
+          </div>
         </div>
       </div>
       <div class="text-center mt-10">
@@ -189,16 +242,26 @@
     </div>
   </section>
 
+  <!-- Vague : galerie brun-50 → livraison blanc -->
+  <div class="bg-brun-50 overflow-hidden leading-[0]">
+    <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 md:h-16 block">
+      <path d="M0,24 C400,64 800,0 1200,44 C1320,56 1400,28 1440,20 L1440,64 L0,64 Z" style="fill: #FFFFFF;" />
+    </svg>
+  </div>
 
   <!-- ===== LIVRAISON ===== -->
   <section class="py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
+        <div class="reveal-left">
           <DeliveryMap />
         </div>
-        <div>
-          <p class="text-rose-500 font-medium text-sm tracking-widest uppercase mb-3">Service exclusif</p>
+        <div class="reveal-right">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+            <span class="text-dore-400 text-sm">✦</span>
+            <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Service exclusif</p>
+          </div>
           <h2 class="section-title">Livraison de pain<br />à domicile</h2>
           <p class="text-brun-600 leading-relaxed mb-6">
             Recevez votre pain frais directement chez vous ! Nous livrons dans un rayon d'1 km
@@ -223,25 +286,28 @@
 <script setup>
 import { COMMUNES } from '../data/config.js'
 import DeliveryMap from '../components/DeliveryMap.vue'
+import { useReveal } from '../composables/useReveal.js'
+
+useReveal()
 
 const specialites = [
   {
-    icon: '🥖',
+    svg: '<path d="M12 22V8"/><path d="M12 8c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 8c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/><path d="M12 13c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 13c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/><path d="M12 18c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 18c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/>',
     title: 'Pains Artisanaux',
     desc: 'Baguettes, pains de campagne, aux céréales, complet… cuits frais chaque matin.',
   },
   {
-    icon: '🎂',
+    svg: '<path d="M5 11a7 7 0 0 1 14 0Z"/><circle cx="12" cy="4.4" r="1.3"/><path d="M6.5 11h11l-1 7.6a1.6 1.6 0 0 1-1.6 1.4H9.1a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M9.6 11.4 9 19"/><path d="M12 11.5v7.8"/><path d="M14.4 11.4 15 19"/>',
     title: 'Pâtisseries',
     desc: 'Entremets, pièces montées et gâteaux personnalisables sur commande.',
   },
   {
-    icon: '🥗',
+    svg: '<path d="M7 2v4a2 2 0 0 0 4 0V2"/><path d="M9 8v14"/><path d="M9 2v4"/><path d="M16 2c2.2 0 3.2 3 3.2 6 0 2-1 3-3.2 3"/><path d="M16 2v20"/>',
     title: 'Snacking & Repas',
     desc: 'Pizzas, sandwiches, salades et formules midi complètes à emporter ou sur place.',
   },
   {
-    icon: '🚚',
+    svg: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
     title: 'Livraison',
     desc: 'Service de livraison de pain à domicile dans 7 communes autour du village.',
   },

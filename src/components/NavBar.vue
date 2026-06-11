@@ -3,6 +3,11 @@
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="isDark ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm shadow-sm'"
   >
+    <!-- Barre de progression du scroll -->
+    <div
+      class="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-dore-400 via-rose-400 to-dore-500 pointer-events-none z-10"
+      :style="{ width: scrollProgress + '%', transition: 'width 0.08s linear' }"
+    />
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
 
@@ -84,8 +89,9 @@ import { useRoute } from 'vue-router'
 import { useLogoCanvas } from '../composables/useLogoCanvas.js'
 import { NAV_LINKS } from '../data/config.js'
 
-const scrolled  = ref(false)
-const menuOpen  = ref(false)
+const scrolled       = ref(false)
+const scrollProgress = ref(0)
+const menuOpen       = ref(false)
 const route     = useRoute()
 const { logoUrl } = useLogoCanvas()
 
@@ -95,6 +101,8 @@ const isDark = computed(() => route.path === '/' && !scrolled.value)
 
 function onScroll() {
   scrolled.value = window.scrollY > 40
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight
+  scrollProgress.value = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0
 }
 
 onMounted(() => window.addEventListener('scroll', onScroll))

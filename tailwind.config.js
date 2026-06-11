@@ -30,9 +30,15 @@ export default {
         },
         // Ambre chaud de l'enseigne extérieure
         dore: {
+          50:  '#FDF6EC',
+          100: '#FAE9CE',
+          200: '#F4D29C',
+          300: '#F2BC64',
           400: '#F0A832',
           500: '#D4831A',
           600: '#B06810',
+          700: '#8A5210',
+          800: '#5E380B',
         },
       },
       fontFamily: {

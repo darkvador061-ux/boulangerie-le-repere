@@ -2,7 +2,13 @@
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-brun-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-dore-500 text-sm font-medium tracking-widest uppercase mb-3">Venez nous voir</p>
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+        <span class="text-dore-400 text-sm">✦</span>
+        <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Venez nous voir</p>
+        <span class="text-dore-400 text-sm">✦</span>
+        <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+      </div>
       <h1 class="font-serif text-5xl md:text-6xl font-bold text-brun-900 mb-4">Contact</h1>
       <p class="text-brun-500 text-lg max-w-xl mx-auto">
         Nous sommes à votre disposition pour toute question, commande ou réservation.
@@ -16,8 +22,15 @@
       <div class="grid md:grid-cols-2 gap-16">
 
         <!-- Infos pratiques -->
-        <div class="space-y-8">
-          <h2 class="font-serif text-3xl font-semibold text-brun-900">Informations pratiques</h2>
+        <div class="space-y-8 reveal-left">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+              <span class="text-dore-400 text-sm">✦</span>
+              <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">À votre écoute</p>
+            </div>
+            <h2 class="font-serif text-3xl font-semibold text-brun-900">Informations pratiques</h2>
+          </div>
 
           <div class="space-y-6">
             <!-- Adresse -->
@@ -83,7 +96,7 @@
         </div>
 
         <!-- Carte Google Maps intégrée -->
-        <div class="rounded-3xl overflow-hidden shadow-xl h-full min-h-96">
+        <div class="rounded-3xl overflow-hidden shadow-xl h-full min-h-96 reveal-right">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.6!2d0.8548!3d43.3873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aec5b1234567%3A0x1!2s3%20le%20Pont%20Neuf%2C%2031230%20L%27Isle-en-Dodon!5e0!3m2!1sfr!2sfr!4v1234567890"
             width="100%"
@@ -102,8 +115,14 @@
   <!-- ===== FORMULAIRE ===== -->
   <section class="py-20 bg-brun-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-dore-500 text-sm font-medium tracking-widest uppercase mb-3">Écrivez-nous</p>
+      <div class="text-center mb-12 reveal">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+          <span class="text-dore-400 text-sm">✦</span>
+          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Écrivez-nous</p>
+          <span class="text-dore-400 text-sm">✦</span>
+          <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+        </div>
         <h2 class="section-title">Envoyer un message</h2>
         <p class="section-subtitle">Pour une commande spéciale, une question ou une demande de livraison.</p>
       </div>
@@ -173,16 +192,23 @@
   <!-- ===== LIVRAISON ===== -->
   <section class="py-20 bg-brun-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-dore-500 text-sm font-medium tracking-widest uppercase mb-3">Nous venons chez vous</p>
+      <div class="text-center mb-12 reveal">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+          <span class="text-dore-400 text-sm">✦</span>
+          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Nous venons chez vous</p>
+          <span class="text-dore-400 text-sm">✦</span>
+          <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+        </div>
         <h2 class="section-title">Zone de livraison</h2>
         <p class="section-subtitle">Livraison de pain à domicile dans un rayon d'1 km autour de l'Isle-en-Dodon.</p>
       </div>
       <div class="flex flex-wrap justify-center gap-3">
         <div
-          v-for="commune in communes"
+          v-for="(commune, i) in communes"
           :key="commune"
-          class="flex items-center gap-2 bg-white text-brun-700 font-medium px-5 py-3 rounded-full shadow-sm border border-brun-100"
+          class="flex items-center gap-2 bg-white text-brun-700 font-medium px-5 py-3 rounded-full shadow-sm border border-brun-100 reveal-scale transition-all duration-300 hover:border-dore-300 hover:shadow-md hover:-translate-y-0.5"
+          :data-delay="i * 0.06"
         >
           <span class="text-dore-500">📍</span>
           {{ commune }}
@@ -199,6 +225,9 @@
 <script setup>
 import { ref } from 'vue'
 import { COMMUNES, HORAIRES, SOCIAL_LINKS } from '../data/config.js'
+import { useReveal } from '../composables/useReveal.js'
+
+useReveal()
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/VOTRE_ID_FORMSPREE'
 

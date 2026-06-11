@@ -6,7 +6,13 @@
       style="background-image: url('/images/photo-interieur.avif')"
     />
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <p class="text-rose-400 text-sm font-medium tracking-widest uppercase mb-3">Notre gamme</p>
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+        <span class="text-dore-400 text-sm">✦</span>
+        <p class="text-rose-400 font-medium text-xs tracking-[0.25em] uppercase">Notre gamme</p>
+        <span class="text-dore-400 text-sm">✦</span>
+        <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+      </div>
       <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4">Pain &amp; Pâtisseries</h1>
       <p class="text-brun-200 text-lg max-w-xl mx-auto">
         Du pain cuit au four chaque matin aux entremets sur-mesure, découvrez toute notre sélection artisanale.
@@ -17,30 +23,37 @@
   <!-- ===== PÂTISSERIES ===== -->
   <section class="py-24 bg-brun-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <p class="text-rose-500 text-sm font-medium tracking-widest uppercase mb-3">Fait maison</p>
+      <div class="text-center mb-14 reveal">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+          <span class="text-dore-400 text-sm">✦</span>
+          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Fait maison</p>
+          <span class="text-dore-400 text-sm">✦</span>
+          <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+        </div>
         <h2 class="section-title">Nos Pâtisseries Artisanales</h2>
         <p class="section-subtitle">Entremets, gâteaux de vitrine et pièces montées sur commande.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div v-for="gateau in gateaux" :key="gateau.nom" class="card group">
+        <div v-for="(gateau, i) in gateaux" :key="gateau.nom" class="card group reveal-scale" :data-delay="(i % 4) * 0.08">
           <div class="overflow-hidden h-44">
             <img
               :src="gateau.img"
               :alt="gateau.nom"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover transition-transform ease-out duration-700 group-hover:scale-110"
             />
           </div>
           <div class="p-5">
             <h3 class="font-serif text-lg font-semibold text-brun-900 mb-2">{{ gateau.nom }}</h3>
             <p class="text-brun-500 text-sm leading-relaxed">{{ gateau.desc }}</p>
+            <span class="block h-[3px] w-8 bg-dore-400 rounded-full mt-4 transition-all duration-500 group-hover:w-14 group-hover:bg-dore-500" />
           </div>
         </div>
       </div>
 
       <!-- Commande sur mesure -->
-      <div class="mt-14 rounded-3xl bg-brun-900 text-white overflow-hidden">
+      <div class="mt-14 rounded-3xl bg-brun-900 text-white overflow-hidden reveal">
         <div class="flex flex-col md:flex-row">
           <div class="md:w-72 lg:w-80 flex-shrink-0">
             <img
@@ -70,8 +83,12 @@
   <section class="py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="text-rose-500 text-sm font-medium tracking-widest uppercase mb-3">Cuit chaque matin</p>
+        <div class="reveal-left">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
+            <span class="text-dore-400 text-sm">✦</span>
+            <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Cuit chaque matin</p>
+          </div>
           <h2 class="section-title">Une grande variété<br />de pains</h2>
           <p class="text-brun-600 leading-relaxed mb-8">
             Du classique au spécial, nos pains sont pétris et cuits chaque jour dans notre fournil.
@@ -87,31 +104,39 @@
             Commander par téléphone
           </RouterLink>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <img
-            src="/images/photo-interieur.avif"
-            alt="Le fournil de la boulangerie Le Repère"
-            class="rounded-2xl h-52 w-full object-cover"
-            loading="lazy"
-          />
-          <img
-            src="/images/photo-vitrine.avif"
-            alt="Vitrine de la boulangerie Le Repère"
-            class="rounded-2xl h-52 w-full object-cover mt-6"
-            loading="lazy"
-          />
-          <img
-            src="/images/facade.jpg"
-            alt="Devanture de la boulangerie Le Repère"
-            class="rounded-2xl h-52 w-full object-cover"
-            loading="lazy"
-          />
-          <img
-            src="/images/facade-nuit.jpg"
-            alt="La boulangerie Le Repère de nuit"
-            class="rounded-2xl h-52 w-full object-cover mt-6"
-            loading="lazy"
-          />
+        <div class="grid grid-cols-2 gap-4 reveal-right">
+          <div class="overflow-hidden rounded-2xl">
+            <img
+              src="/images/photo-interieur.avif"
+              alt="Le fournil de la boulangerie Le Repère"
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+          <div class="overflow-hidden rounded-2xl mt-6">
+            <img
+              src="/images/photo-vitrine.avif"
+              alt="Vitrine de la boulangerie Le Repère"
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+          <div class="overflow-hidden rounded-2xl">
+            <img
+              src="/images/facade.jpg"
+              alt="Devanture de la boulangerie Le Repère"
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+          <div class="overflow-hidden rounded-2xl mt-6">
+            <img
+              src="/images/facade-nuit.jpg"
+              alt="La boulangerie Le Repère de nuit"
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -119,6 +144,10 @@
 </template>
 
 <script setup>
+import { useReveal } from '../composables/useReveal.js'
+
+useReveal()
+
 const base = import.meta.env.BASE_URL
 const gateaux = [
   {
