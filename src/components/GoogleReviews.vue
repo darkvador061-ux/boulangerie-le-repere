@@ -37,14 +37,14 @@
     </div>
 
     <!-- Rangée 1 : défile vers la gauche -->
-    <div class="marquee-wrapper" @mouseenter="pause" @mouseleave="resume">
+    <div class="marquee-wrapper w-full" @mouseenter="pause" @mouseleave="resume">
       <div class="marquee-track" :class="{ paused: isPaused }" style="--duration: 40s;">
         <ReviewCard v-for="(r, i) in row1" :key="'r1-' + i" :review="r" />
       </div>
     </div>
 
     <!-- Rangée 2 : défile vers la droite -->
-    <div class="marquee-wrapper mt-4" @mouseenter="pause" @mouseleave="resume">
+    <div class="marquee-wrapper mt-4 w-full" @mouseenter="pause" @mouseleave="resume">
       <div class="marquee-track marquee-reverse" :class="{ paused: isPaused }" style="--duration: 50s;">
         <ReviewCard v-for="(r, i) in row2" :key="'r2-' + i" :review="r" />
       </div>

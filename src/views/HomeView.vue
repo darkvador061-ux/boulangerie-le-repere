@@ -3,8 +3,9 @@
   <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
 
     <!-- Image de fond avec parallax léger -->
-    <div class="hero-bg absolute inset-0"
-      style="background-image: url('/images/facade.jpg'); background-size: cover; background-position: center;">
+    <div class="hero-bg absolute inset-0">
+      <img src="/images/facade.jpg" alt="" fetchpriority="high" decoding="async"
+        class="w-full h-full object-cover object-center" aria-hidden="true" />
     </div>
 
     <!-- Superposition dégradée chaude -->
@@ -90,7 +91,7 @@
     </div>
 
     <!-- Scroll hint -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 text-xs">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/50 text-xs">
       <span class="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
     </div>
   </section>
