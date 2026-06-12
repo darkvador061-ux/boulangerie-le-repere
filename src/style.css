@@ -57,13 +57,6 @@
 }
 
 /* ===== Scroll Reveal ===== */
-.reveal,
-.reveal-left,
-.reveal-right,
-.reveal-scale {
-  will-change: transform, opacity;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(36px);

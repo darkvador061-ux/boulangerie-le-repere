@@ -3,22 +3,16 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 import './style.css'
 
-import HomeView            from './views/HomeView.vue'
-import PainPatisseriesView from './views/PainPatisseriesView.vue'
-import SnackingTraiteurView from './views/SnackingTraiteurView.vue'
-import ContactView         from './views/ContactView.vue'
-import PolitiqueView       from './views/PolitiqueView.vue'
-import CGVView             from './views/CGVView.vue'
-import RGPDView            from './views/RGPDView.vue'
+import HomeView from './views/HomeView.vue'
 
 const routes = [
-  { path: '/',                        component: HomeView,             meta: { title: 'Accueil' } },
-  { path: '/pain-patisseries',        component: PainPatisseriesView,  meta: { title: 'Pain & Pâtisseries' } },
-  { path: '/snacking-traiteur',       component: SnackingTraiteurView, meta: { title: 'Snacking & Traiteur' } },
-  { path: '/contact',                 component: ContactView,          meta: { title: 'Contact' } },
-  { path: '/politique-confidentialite', component: PolitiqueView,      meta: { title: 'Politique de confidentialité' } },
-  { path: '/conditions-generales',    component: CGVView,              meta: { title: 'Conditions générales' } },
-  { path: '/rgpd',                    component: RGPDView,             meta: { title: 'RGPD' } },
+  { path: '/',                          component: HomeView,                                                              meta: { title: 'Accueil' } },
+  { path: '/pain-patisseries',          component: () => import('./views/PainPatisseriesView.vue'),                      meta: { title: 'Pain & Pâtisseries' } },
+  { path: '/snacking-traiteur',         component: () => import('./views/SnackingTraiteurView.vue'),                     meta: { title: 'Snacking & Traiteur' } },
+  { path: '/contact',                   component: () => import('./views/ContactView.vue'),                              meta: { title: 'Contact' } },
+  { path: '/politique-confidentialite', component: () => import('./views/PolitiqueView.vue'),                            meta: { title: 'Politique de confidentialité' } },
+  { path: '/conditions-generales',      component: () => import('./views/CGVView.vue'),                                  meta: { title: 'Conditions générales' } },
+  { path: '/rgpd',                      component: () => import('./views/RGPDView.vue'),                                 meta: { title: 'RGPD' } },
 ]
 
 const router = createRouter({

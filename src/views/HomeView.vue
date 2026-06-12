@@ -140,6 +140,7 @@
           <img
             src="/images/facade-nuit.jpg"
             alt="Devanture de la Boulangerie Le Repère de nuit"
+            loading="lazy"
             class="rounded-2xl shadow-xl w-full object-cover h-96"
           />
           <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-[0_20px_45px_-12px_rgba(24,27,40,0.28)] border border-brun-100 p-6 max-w-xs hidden md:block">
@@ -223,6 +224,7 @@
           <img
             :src="img.src"
             :alt="img.alt"
+            loading="lazy"
             class="w-full h-full object-cover transition-transform ease-out duration-[1200ms] group-hover:scale-110"
             :class="i === 0 ? 'h-full min-h-64' : 'h-52'"
           />
