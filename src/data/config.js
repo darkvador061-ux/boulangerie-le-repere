@@ -9,7 +9,7 @@ export const SOCIAL_LINKS = {
 }
 
 export const COMMUNES = [
-  'Isle-en-Dodon', 'Couielles', 'Riolas', 'Cazac', 'Labastide', 'Fabas', 'Saint-Frajou',
+  'Isle-en-Dodon', 'Coueilles', 'Riolas', 'Cazac', 'Labastide', 'Fabas', 'Saint-Frajou',
 ]
 
 export const HORAIRES = [

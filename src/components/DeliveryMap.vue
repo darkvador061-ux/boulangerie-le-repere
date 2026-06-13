@@ -106,7 +106,7 @@ function communeDivIcon(i) {
 }
 
 const deliveryCommunes = [
-  { name: 'Couielles',    coords: [43.376, 0.821] },
+  { name: 'Coueilles',    coords: [43.376, 0.821] },
   { name: 'Riolas',       coords: [43.362, 0.877] },
   { name: 'Cazac',        coords: [43.402, 0.884] },
   { name: 'Labastide',    coords: [43.427, 0.840] },
