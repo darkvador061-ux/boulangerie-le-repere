@@ -3,7 +3,7 @@
   <section class="relative pt-32 pb-20 bg-brun-900 overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center opacity-35"
-      style="background-image: url('/images/plateau-traiteur-assortiment.jpg')"
+      :style="{ backgroundImage: `url(${base}images/plateau-traiteur-assortiment.jpg)` }"
     />
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <div class="flex items-center justify-center gap-3 mb-4">
@@ -72,6 +72,8 @@
             :src="img.src"
             :alt="img.alt"
             loading="lazy"
+            width="800"
+            height="600"
             class="w-full h-64 object-cover transition-transform ease-out duration-[1200ms] group-hover:scale-110"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-brun-900/85 via-brun-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

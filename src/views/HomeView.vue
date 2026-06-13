@@ -10,6 +10,8 @@
         aria-hidden="true"
         fetchpriority="high"
         decoding="async"
+        width="1154"
+        height="846"
         class="w-[520px] md:w-[700px] opacity-20 select-none pointer-events-none"
       />
     </div>
@@ -171,9 +173,11 @@
           <div class="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-dore-400/15 -z-10" />
           <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-xl bg-rose-400/10 -z-10" />
           <img
-            src="/images/facade.jpg"
+            :src="base + 'images/facade.jpg'"
             alt="Devanture de la Boulangerie Le Repère"
             loading="lazy"
+            width="2048"
+            height="1536"
             class="rounded-2xl shadow-2xl w-full object-cover h-[440px]"
           />
           <!-- Badge ouverture -->
@@ -209,6 +213,7 @@
           data-delay="0"
         >
           <img :src="specialites[0].img" :alt="`${specialites[0].title} – Boulangerie artisanale Le Repère`" loading="lazy"
+            width="900" height="599"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           <div class="absolute inset-0 bg-gradient-to-t from-brun-900/90 via-brun-900/25 to-brun-900/10" />
           <div class="absolute inset-0 rounded-3xl ring-0 ring-dore-400/0 group-hover:ring-2 group-hover:ring-dore-400/60 transition-all duration-500" />
@@ -238,6 +243,7 @@
             :data-delay="(i + 1) * 0.08"
           >
             <img :src="item.img" :alt="`${item.title} – Boulangerie artisanale Le Repère`" loading="lazy"
+              width="800" height="600"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-brun-900/90 via-brun-900/25 to-brun-900/10" />
             <div class="absolute inset-0 rounded-3xl ring-0 ring-dore-400/0 group-hover:ring-2 group-hover:ring-dore-400/60 transition-all duration-500" />

@@ -6,7 +6,7 @@
         <!-- Identité -->
         <div>
           <div class="flex items-center gap-3 mb-4">
-            <img :src="logoUrl" alt="Logo Boulangerie Le Repère" class="h-16 w-auto object-contain flex-shrink-0 drop-shadow" />
+            <img :src="logoUrl" alt="Logo Boulangerie Le Repère" width="1154" height="846" class="h-16 w-auto object-contain flex-shrink-0 drop-shadow" />
             <div>
               <p class="font-serif font-bold text-2xl text-white leading-none">Le Repère</p>
               <p class="text-xs text-brun-300 tracking-[0.2em] uppercase mt-0.5">Boulangerie Artisanale</p>

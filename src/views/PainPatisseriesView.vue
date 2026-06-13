@@ -3,7 +3,7 @@
   <section class="relative pt-32 pb-20 bg-brun-900 overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center opacity-30"
-      style="background-image: url('/images/mignardises-vitrine.jpg')"
+      :style="{ backgroundImage: `url(${base}images/mignardises-vitrine.jpg)` }"
     />
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <div class="flex items-center justify-center gap-3 mb-4">
@@ -43,6 +43,8 @@
               :alt="`${gateau.nom} – Boulangerie artisanale Le Repère à l'Isle-en-Dodon`"
               class="w-full h-full object-cover transition-transform ease-out duration-700 group-hover:scale-110"
               loading="lazy"
+              width="800"
+              height="600"
             />
           </div>
           <div class="p-5">
@@ -92,6 +94,8 @@
             :src="img.src"
             :alt="img.alt + ` – Boulangerie artisanale Le Repère à l'Isle-en-Dodon`"
             loading="lazy"
+            width="800"
+            height="600"
             class="w-full object-cover transition-transform ease-out duration-[1200ms] group-hover:scale-110"
             :class="i === 0 || i === 5 ? 'h-full min-h-[280px]' : 'h-44'"
           />
@@ -114,6 +118,8 @@
               alt="Pièce montée de mariage – Boulangerie artisanale Le Repère à l'Isle-en-Dodon"
               class="w-full h-56 md:h-full object-cover"
               loading="lazy"
+              width="800"
+              height="1067"
             />
           </div>
           <div class="p-8 md:p-10 flex flex-col justify-center gap-6 flex-1">
@@ -162,19 +168,19 @@
         <div class="grid grid-cols-2 gap-4 reveal-right">
           <div class="overflow-hidden rounded-2xl">
             <img :src="base + 'images/pain-campagne.jpg'" alt="Pain de campagne – Boulangerie Le Repère"
-              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" />
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" width="900" height="599" />
           </div>
           <div class="overflow-hidden rounded-2xl mt-6">
             <img :src="base + 'images/pain-cereales.jpg'" alt="Pain aux céréales – Boulangerie Le Repère"
-              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" />
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" width="800" height="600" />
           </div>
           <div class="overflow-hidden rounded-2xl">
             <img :src="base + 'images/pain-complet.jpg'" alt="Pain complet – Boulangerie Le Repère"
-              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" />
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" width="800" height="600" />
           </div>
           <div class="overflow-hidden rounded-2xl mt-6">
             <img :src="base + 'images/pain-artisanal-baguette.jpg'" alt="Pain artisanal tranché – Boulangerie Le Repère"
-              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" />
+              class="h-52 w-full object-cover transition-transform ease-out duration-700 hover:scale-110" loading="lazy" width="800" height="600" />
           </div>
         </div>
       </div>

@@ -16,6 +16,8 @@
           <img
             :src="logoUrl"
             alt="Logo Boulangerie Le Repère"
+            width="1154"
+            height="846"
             class="h-16 w-auto object-contain flex-shrink-0 drop-shadow"
           />
           <div class="leading-tight">
