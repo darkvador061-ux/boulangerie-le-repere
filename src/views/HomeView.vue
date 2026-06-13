@@ -40,6 +40,7 @@
         <h1 class="font-serif font-bold leading-none"
             style="font-size: clamp(6rem, 18vw, 13rem); letter-spacing: -0.02em; color: #D4831A; text-shadow: 0 0 80px rgba(212,131,26,0.5), 0 4px 40px rgba(212,131,26,0.3);">
           Le Repère
+          <span class="sr-only"> – Boulangerie Artisanale à l'Isle-en-Dodon</span>
         </h1>
         <p class="font-serif italic text-white/60 mt-1"
            style="font-size: clamp(1rem, 2.5vw, 1.5rem); letter-spacing: 0.05em;">

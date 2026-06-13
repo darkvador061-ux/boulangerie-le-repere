@@ -45,25 +45,27 @@
         <!-- Contact -->
         <div>
           <h4 class="font-serif text-white font-semibold text-lg mb-5">Nous trouver</h4>
-          <ul class="space-y-4 text-sm text-brun-300">
-            <li class="flex gap-3">
-              <span class="mt-0.5">📍</span>
-              <span>3 le Pont Neuf<br />31230 l'Isle-en-Dodon</span>
-            </li>
-            <li class="flex gap-3">
-              <span>📞</span>
-              <a href="tel:0561896070" class="hover:text-dore-400 transition-colors">05 61 89 60 70</a>
-            </li>
-            <li class="flex gap-3">
-              <span>🕐</span>
-              <div>
-                <p>Lun – Mar, Jeu – Sam</p>
-                <p>6h30 – 19h30</p>
-                <p class="mt-1">Dimanche 6h30 – 19h30</p>
-                <p class="text-brun-500 mt-1">Fermé le mercredi</p>
-              </div>
-            </li>
-          </ul>
+          <address class="not-italic">
+            <ul class="space-y-4 text-sm text-brun-300">
+              <li class="flex gap-3">
+                <span class="mt-0.5">📍</span>
+                <span>3 le Pont Neuf<br />31230 l'Isle-en-Dodon</span>
+              </li>
+              <li class="flex gap-3">
+                <span>📞</span>
+                <a href="tel:0561896070" class="hover:text-dore-400 transition-colors">05 61 89 60 70</a>
+              </li>
+              <li class="flex gap-3">
+                <span>🕐</span>
+                <div>
+                  <p>Lun – Mar, Jeu – Sam</p>
+                  <p>6h30 – 19h30</p>
+                  <p class="mt-1">Dimanche 6h30 – 19h30</p>
+                  <p class="text-brun-500 mt-1">Fermé le mercredi</p>
+                </div>
+              </li>
+            </ul>
+          </address>
         </div>
       </div>
 

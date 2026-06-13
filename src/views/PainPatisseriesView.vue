@@ -40,7 +40,7 @@
           <div class="overflow-hidden h-44">
             <img
               :src="gateau.img"
-              :alt="gateau.nom"
+              :alt="`${gateau.nom} – Boulangerie artisanale Le Repère à l'Isle-en-Dodon`"
               class="w-full h-full object-cover transition-transform ease-out duration-700 group-hover:scale-110"
             />
           </div>
