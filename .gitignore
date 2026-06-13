@@ -34,3 +34,9 @@ pnpm-debug.log*
 # Claude Code
 .claude/
 *.skill
+
+# Photos brutes source (non optimisées)
+public/fwphotoboulangerielerepre/
+
+# Fichiers temporaires Vite
+vite.config.js.timestamp-*.mjs

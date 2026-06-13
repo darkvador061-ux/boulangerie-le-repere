@@ -2,14 +2,20 @@
   <!-- ===== HERO ===== -->
   <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
 
-    <!-- Image de fond avec parallax léger -->
-    <div class="hero-bg absolute inset-0">
-      <img src="/images/facade.jpg" alt="" fetchpriority="high" decoding="async"
-        class="w-full h-full object-cover object-center" aria-hidden="true" />
+    <!-- Logo en fond -->
+    <div class="hero-bg absolute inset-0 flex items-center justify-center bg-brun-900">
+      <img
+        :src="base + 'images/logo.png'"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        decoding="async"
+        class="w-[520px] md:w-[700px] opacity-20 select-none pointer-events-none"
+      />
     </div>
 
     <!-- Superposition dégradée chaude -->
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(42,22,8,0.82) 0%, rgba(90,40,5,0.70) 50%, rgba(42,22,8,0.88) 100%);" />
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(24,27,40,0.60) 0%, rgba(42,22,8,0.45) 50%, rgba(24,27,40,0.70) 100%);" />
 
     <!-- Halo doré décoratif -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full hero-glow" />
@@ -24,11 +30,11 @@
 
       <!-- Badge artisan -->
       <div class="hero-badge flex items-center gap-3 mb-10 px-5 py-2 rounded-full border border-dore-400/40 bg-white/5 backdrop-blur-sm">
-        <span class="text-dore-400 text-sm">✦</span>
+        <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
         <p class="text-dore-300 font-sans text-xs font-semibold tracking-[0.3em] uppercase">
           Boulangerie Artisanale &nbsp;·&nbsp; Isle-en-Dodon
         </p>
-        <span class="text-dore-400 text-sm">✦</span>
+        <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
       </div>
 
       <!-- Titre principal -->
@@ -51,7 +57,7 @@
       <!-- Séparateur doré -->
       <div class="flex items-center gap-5 mb-8 w-64 hero-divider">
         <span class="flex-1 h-px bg-gradient-to-r from-transparent to-dore-400/60" />
-        <span class="text-dore-400 text-lg">✦</span>
+        <span class="text-dore-400 text-lg" aria-hidden="true">✦</span>
         <span class="flex-1 h-px bg-gradient-to-l from-transparent to-dore-400/60" />
       </div>
 
@@ -125,10 +131,10 @@
         <div class="reveal-left">
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-            <span class="text-dore-400 text-sm">✦</span>
+            <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
             <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Notre histoire</p>
           </div>
-          <h2 class="section-title">Tradition &amp; Créativité,<br />au cœur de votre village</h2>
+          <h2 class="section-title">Passion &amp; savoir-faire,<br />au cœur du village</h2>
           <p class="text-brun-600 leading-relaxed mb-6">
             Au Repère, nous allions le charme de l'artisanat traditionnel à une approche
             contemporaine. Chaque produit est façonné avec soin, du fournil jusqu'à votre table.
@@ -139,18 +145,20 @@
           </p>
 
           <!-- Stats -->
-          <div class="grid grid-cols-3 gap-4 mb-10">
-            <div class="text-center py-4 px-3 bg-white rounded-2xl border border-brun-100 shadow-sm">
-              <p class="font-serif text-3xl font-bold text-dore-500 leading-none mb-1">6j</p>
-              <p class="text-brun-500 text-xs">Ouvert / 7</p>
+          <div class="flex items-stretch gap-0 mb-10 border border-brun-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+            <div class="flex-1 text-center py-5 px-4">
+              <p class="font-serif text-4xl font-bold text-brun-900 leading-none">6<span class="text-dore-500 text-2xl">j</span></p>
+              <p class="text-brun-400 text-xs mt-1.5 tracking-wide uppercase">sur 7</p>
             </div>
-            <div class="text-center py-4 px-3 bg-white rounded-2xl border border-brun-100 shadow-sm">
-              <p class="font-serif text-3xl font-bold text-dore-500 leading-none mb-1">7</p>
-              <p class="text-brun-500 text-xs">Communes livrées</p>
+            <div class="w-px bg-brun-100 self-stretch" />
+            <div class="flex-1 text-center py-5 px-4">
+              <p class="font-serif text-4xl font-bold text-brun-900 leading-none">7<span class="text-dore-500 text-2xl"> ✦</span></p>
+              <p class="text-brun-400 text-xs mt-1.5 tracking-wide uppercase">communes</p>
             </div>
-            <div class="text-center py-4 px-3 bg-white rounded-2xl border border-brun-100 shadow-sm">
-              <p class="font-serif text-3xl font-bold text-dore-500 leading-none mb-1">6h30</p>
-              <p class="text-brun-500 text-xs">Ouverture</p>
+            <div class="w-px bg-brun-100 self-stretch" />
+            <div class="flex-1 text-center py-5 px-4">
+              <p class="font-serif text-4xl font-bold text-brun-900 leading-none">6<span class="text-dore-500 text-2xl">h30</span></p>
+              <p class="text-brun-400 text-xs mt-1.5 tracking-wide uppercase">dès le matin</p>
             </div>
           </div>
 
@@ -163,8 +171,8 @@
           <div class="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-dore-400/15 -z-10" />
           <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-xl bg-rose-400/10 -z-10" />
           <img
-            src="/images/facade-nuit.jpg"
-            alt="Devanture de la Boulangerie Le Repère de nuit"
+            src="/images/facade.jpg"
+            alt="Devanture de la Boulangerie Le Repère"
             loading="lazy"
             class="rounded-2xl shadow-2xl w-full object-cover h-[440px]"
           />
@@ -184,43 +192,69 @@
       <div class="reveal">
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Ce que nous proposons</p>
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
         <h2 class="section-title">Nos Spécialités</h2>
         <p class="section-subtitle">Du pain frais du matin aux formules midi, tout est fait maison.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-5 mt-12">
-        <div
-          v-for="(item, i) in specialites"
-          :key="item.title"
-          class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer reveal-scale"
-          :data-delay="i * 0.1"
+      <div class="flex flex-col sm:flex-row gap-4 mt-12">
+        <!-- Tile principale (grande) -->
+        <RouterLink
+          :to="specialites[0].link"
+          class="group relative rounded-3xl overflow-hidden cursor-pointer reveal-scale h-72 sm:h-auto sm:flex-1 sm:min-h-[560px]"
+          data-delay="0"
         >
-          <!-- Image de fond -->
-          <img
-            :src="item.img"
-            :alt="`${item.title} – Boulangerie artisanale Le Repère à l'Isle-en-Dodon`"
-            loading="lazy"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          <!-- Overlay dégradé -->
-          <div class="absolute inset-0 bg-gradient-to-t from-brun-900/95 via-brun-900/30 to-transparent" />
-          <!-- Numéro watermark -->
-          <span class="absolute top-4 right-5 font-serif text-7xl font-bold text-white/[0.07] select-none leading-none">0{{ i + 1 }}</span>
-          <!-- Icône glassmorphism -->
-          <div class="absolute top-5 left-5 w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-dore-300" v-html="item.svg" />
+          <img :src="specialites[0].img" :alt="`${specialites[0].title} – Boulangerie artisanale Le Repère`" loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brun-900/90 via-brun-900/25 to-brun-900/10" />
+          <div class="absolute inset-0 rounded-3xl ring-0 ring-dore-400/0 group-hover:ring-2 group-hover:ring-dore-400/60 transition-all duration-500" />
+          <div class="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-sm border border-white/15">
+            <span class="text-white/90 text-xs font-medium tracking-[0.18em] uppercase">{{ specialites[0].category }}</span>
           </div>
-          <!-- Contenu bas -->
           <div class="absolute bottom-0 inset-x-0 p-6">
-            <h3 class="font-serif text-xl font-bold text-white mb-1">{{ item.title }}</h3>
-            <p class="text-brun-200 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">{{ item.desc }}</p>
-            <span class="block h-px w-8 bg-dore-400 mt-3 transition-all duration-500 group-hover:w-16" />
+            <h3 class="font-serif text-2xl font-bold text-white mb-1.5">{{ specialites[0].title }}</h3>
+            <p class="text-brun-200 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">{{ specialites[0].desc }}</p>
+            <div class="flex items-center justify-between mt-3">
+              <span class="block h-px w-8 bg-dore-400 transition-all duration-500 group-hover:w-14" />
+              <span class="flex items-center gap-1.5 text-dore-400 text-xs font-semibold tracking-widest uppercase opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-3.5 h-3.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
           </div>
+        </RouterLink>
+
+        <!-- Colonne droite : 3 petites tiles -->
+        <div class="flex flex-col gap-4 sm:flex-1">
+          <RouterLink
+            v-for="(item, i) in specialites.slice(1)"
+            :key="item.title"
+            :to="item.link"
+            class="group relative rounded-3xl overflow-hidden cursor-pointer reveal-scale"
+            :class="i === 2 ? 'h-48' : 'h-56'"
+            :data-delay="(i + 1) * 0.08"
+          >
+            <img :src="item.img" :alt="`${item.title} – Boulangerie artisanale Le Repère`" loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brun-900/90 via-brun-900/25 to-brun-900/10" />
+            <div class="absolute inset-0 rounded-3xl ring-0 ring-dore-400/0 group-hover:ring-2 group-hover:ring-dore-400/60 transition-all duration-500" />
+            <div class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-sm border border-white/15">
+              <span class="text-white/90 text-xs font-medium tracking-[0.18em] uppercase">{{ item.category }}</span>
+            </div>
+            <div class="absolute bottom-0 inset-x-0 p-5">
+              <h3 class="font-serif text-lg font-bold text-white mb-1">{{ item.title }}</h3>
+              <p class="text-brun-200 text-xs leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">{{ item.desc }}</p>
+              <div class="flex items-center justify-between mt-2.5">
+                <span class="block h-px w-6 bg-dore-400 transition-all duration-500 group-hover:w-12" />
+                <span class="flex items-center gap-1.5 text-dore-400 text-xs font-semibold tracking-widest uppercase opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                  Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-3 h-3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -232,9 +266,9 @@
       <div class="text-center mb-14 reveal">
         <div class="flex items-center justify-center gap-3 mb-6">
           <span class="h-px w-12 bg-gradient-to-r from-transparent to-dore-400/60" />
-          <span class="text-dore-400 text-base">✦</span>
+          <span class="text-dore-400 text-base" aria-hidden="true">✦</span>
           <p class="text-rose-300 font-medium text-xs tracking-[0.3em] uppercase">Coup d'œil</p>
-          <span class="text-dore-400 text-base">✦</span>
+          <span class="text-dore-400 text-base" aria-hidden="true">✦</span>
           <span class="h-px w-12 bg-gradient-to-l from-transparent to-dore-400/60" />
         </div>
         <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Nos créations <span class="text-dore-400">du moment</span></h2>
@@ -293,7 +327,7 @@
         <div class="reveal-right">
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-            <span class="text-dore-400 text-sm">✦</span>
+            <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
             <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Service exclusif</p>
           </div>
           <h2 class="section-title">Livraison de pain<br />à domicile</h2>
@@ -330,34 +364,42 @@ const specialites = [
   {
     svg: '<path d="M12 22V8"/><path d="M12 8c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 8c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/><path d="M12 13c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 13c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/><path d="M12 18c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 18c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/>',
     title: 'Pains Artisanaux',
+    category: 'Fournil · Chaque matin',
     desc: 'Baguettes, pains de campagne, aux céréales, complet… cuits frais chaque matin.',
-    img: base + 'images/photo-interieur.avif',
+    img: base + 'images/pain-campagne.jpg',
+    link: '/pain-patisseries',
   },
   {
     svg: '<path d="M5 11a7 7 0 0 1 14 0Z"/><circle cx="12" cy="4.4" r="1.3"/><path d="M6.5 11h11l-1 7.6a1.6 1.6 0 0 1-1.6 1.4H9.1a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M9.6 11.4 9 19"/><path d="M12 11.5v7.8"/><path d="M14.4 11.4 15 19"/>',
     title: 'Pâtisseries',
+    category: 'Fait maison · Sur commande',
     desc: 'Entremets, pièces montées et gâteaux personnalisables sur commande.',
-    img: base + 'images/petites-patisseries.jpg',
+    img: base + 'images/mignardises-vitrine.jpg',
+    link: '/pain-patisseries',
   },
   {
     svg: '<path d="M7 2v4a2 2 0 0 0 4 0V2"/><path d="M9 8v14"/><path d="M9 2v4"/><path d="M16 2c2.2 0 3.2 3 3.2 6 0 2-1 3-3.2 3"/><path d="M16 2v20"/>',
     title: 'Snacking & Repas',
+    category: 'Traiteur · Événements',
     desc: 'Pizzas, sandwiches, salades et formules midi complètes à emporter ou sur place.',
-    img: base + 'images/snacking-vitrine.jpg',
+    img: base + 'images/buffet-traiteur-complet.jpg',
+    link: '/snacking-traiteur',
   },
   {
     svg: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
     title: 'Livraison',
+    category: '7 communes · À domicile',
     desc: 'Service de livraison de pain à domicile dans 7 communes autour du village.',
-    img: base + 'images/facade.jpg',
+    img: base + 'images/camionnette-livraison.jpg',
+    link: '/contact',
   },
 ]
 const galerie = [
-  { src: base + 'images/petites-patisseries.jpg', alt: 'Plateau de petites pâtisseries' },
-  { src: base + 'images/eclairs-chocolat.jpg',    alt: 'Éclairs au chocolat maison' },
-  { src: base + 'images/snacking-vitrine.jpg',    alt: 'Vitrine snacking de la boulangerie' },
-  { src: base + 'images/sandwiches.jpg',          alt: 'Sandwichs gourmands' },
-  { src: base + 'images/piece-montee.webp',       alt: 'Pièce montée de mariage' },
+  { src: base + 'images/mignardises-vitrine.jpg',        alt: 'Mignardises et petites pâtisseries' },
+  { src: base + 'images/tarte-fraises-vitrine.jpg',      alt: 'Tarte aux fraises maison' },
+  { src: base + 'images/plateau-choux-sales.jpg',        alt: 'Plateau choux salés traiteur' },
+  { src: base + 'images/piece-montee-mariage-moderne.jpg', alt: 'Pièce montée mariage sur mesure' },
+  { src: base + 'images/tarte-chocolat-eclair.jpg',      alt: 'Tarte chocolat et éclairs' },
 ]
 
 const communes = COMMUNES

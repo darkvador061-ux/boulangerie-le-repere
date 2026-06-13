@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.boulangerielerepere.fr/sitemap.xml
+Sitemap: https://boulangerielerepere.fr/sitemap.xml

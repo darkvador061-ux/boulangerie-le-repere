@@ -7,20 +7,30 @@
     <meta name="description" content="Boulangerie Le Repère à l'Isle-en-Dodon – Pains au levain, viennoiseries maison et pâtisseries artisanales préparées chaque jour avec passion. Livraison à domicile disponible." />
     <title>Le Repère – Boulangerie Artisanale à l'Isle-en-Dodon</title>
 
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#D4831A" />
+    <link rel="canonical" href="https://boulangerielerepere.fr/" />
+
+    <!-- Géolocalisation -->
+    <meta name="geo.region" content="FR-31" />
+    <meta name="geo.placename" content="L'Isle-en-Dodon" />
+    <meta name="geo.position" content="43.3873;0.8548" />
+    <meta name="ICBM" content="43.3873, 0.8548" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Boulangerie Le Repère" />
     <meta property="og:title" content="Le Repère – Boulangerie Artisanale à l'Isle-en-Dodon" />
     <meta property="og:description" content="Boulangerie Le Repère à l'Isle-en-Dodon – Pains au levain, viennoiseries maison et pâtisseries artisanales préparées chaque jour avec passion." />
-    <meta property="og:url" content="https://darkvador061-ux.github.io/boulangerie-le-repere/" />
-    <meta property="og:image" content="https://darkvador061-ux.github.io/boulangerie-le-repere/images/facade.jpg" />
+    <meta property="og:url" content="https://boulangerielerepere.fr/" />
+    <meta property="og:image" content="https://boulangerielerepere.fr/images/facade-nuit.jpg" />
     <meta property="og:locale" content="fr_FR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Le Repère – Boulangerie Artisanale à l'Isle-en-Dodon" />
     <meta name="twitter:description" content="Boulangerie Le Repère à l'Isle-en-Dodon – Pains au levain, viennoiseries maison et pâtisseries artisanales préparées chaque jour avec passion." />
-    <meta name="twitter:image" content="https://darkvador061-ux.github.io/boulangerie-le-repere/images/facade.jpg" />
+    <meta name="twitter:image" content="https://boulangerielerepere.fr/images/facade-nuit.jpg" />
 
     <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json">
@@ -28,10 +38,10 @@
       "@context": "https://schema.org",
       "@type": "Bakery",
       "name": "Boulangerie Le Repère",
-      "description": "Boulangerie artisanale à l'Isle-en-Dodon proposant pains au levain, viennoiseries, pâtisseries modernes et livraison à domicile.",
-      "url": "https://darkvador061-ux.github.io/boulangerie-le-repere/",
+      "description": "Boulangerie artisanale à l'Isle-en-Dodon proposant pains au levain, viennoiseries, pâtisseries modernes, snacking traiteur et livraison à domicile.",
+      "url": "https://boulangerielerepere.fr/",
       "telephone": "+33561896070",
-      "image": "https://darkvador061-ux.github.io/boulangerie-le-repere/images/facade.jpg",
+      "image": "https://boulangerielerepere.fr/images/facade-nuit.jpg",
       "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
@@ -45,6 +55,7 @@
         "latitude": 43.3873,
         "longitude": 0.8548
       },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Boulangerie+Le+Repère+Isle-en-Dodon",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -53,14 +64,27 @@
           "closes": "19:30"
         }
       ],
-      "servesCuisine": ["Pain artisanal", "Viennoiseries", "Pâtisseries"]
+      "servesCuisine": ["Pain artisanal", "Viennoiseries", "Pâtisseries", "Snacking", "Traiteur"],
+      "sameAs": [
+        "https://www.facebook.com/boulangerielerepere",
+        "https://www.instagram.com/boulangerielerepere"
+      ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.3873,
+          "longitude": 0.8548
+        },
+        "geoRadius": "10000"
+      }
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
-    <link rel="preload" as="image" href="/images/facade.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/facade-nuit.jpg" fetchpriority="high" />
   </head>
   <body>
     <div id="app"></div>

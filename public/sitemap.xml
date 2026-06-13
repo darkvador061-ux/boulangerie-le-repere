@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.boulangerielerepere.fr/</loc>
+    <loc>https://boulangerielerepere.fr/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.boulangerielerepere.fr/contact</loc>
+    <loc>https://boulangerielerepere.fr/pain-patisseries</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.boulangerielerepere.fr/pain-patisseries</loc>
+    <loc>https://boulangerielerepere.fr/snacking-traiteur</loc>
     <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.boulangerielerepere.fr/snacking-traiteur</loc>
+    <loc>https://boulangerielerepere.fr/contact</loc>
     <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 

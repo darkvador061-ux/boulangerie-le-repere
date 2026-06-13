@@ -6,9 +6,9 @@
       <div class="text-center mb-14">
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Avis clients</p>
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
         <h2 class="section-title">Ce que nos clients disent de nous</h2>

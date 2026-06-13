@@ -4,9 +4,9 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="flex items-center justify-center gap-3 mb-4">
         <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-        <span class="text-dore-400 text-sm">✦</span>
+        <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
         <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Venez nous voir</p>
-        <span class="text-dore-400 text-sm">✦</span>
+        <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
         <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
       </div>
       <h1 class="font-serif text-5xl md:text-6xl font-bold text-brun-900 mb-4">Contact</h1>
@@ -26,7 +26,7 @@
           <div>
             <div class="flex items-center gap-3 mb-4">
               <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-              <span class="text-dore-400 text-sm">✦</span>
+              <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
               <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">À votre écoute</p>
             </div>
             <h2 class="font-serif text-3xl font-semibold text-brun-900">Informations pratiques</h2>
@@ -118,9 +118,9 @@
       <div class="text-center mb-12 reveal">
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Écrivez-nous</p>
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
         <h2 class="section-title">Envoyer un message</h2>
@@ -139,25 +139,25 @@
       <form v-else @submit.prevent="submitForm" class="space-y-6 bg-white rounded-3xl p-8 md:p-10 shadow-sm">
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-brun-700 mb-2">Nom *</label>
-            <input v-model="form.nom" type="text" required placeholder="Votre nom"
+            <label for="contact-nom" class="block text-sm font-medium text-brun-700 mb-2">Nom *</label>
+            <input id="contact-nom" v-model="form.nom" type="text" required placeholder="Votre nom" autocomplete="name"
               class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-brun-700 mb-2">Email *</label>
-            <input v-model="form.email" type="email" required placeholder="votre@email.fr"
+            <label for="contact-email" class="block text-sm font-medium text-brun-700 mb-2">Email *</label>
+            <input id="contact-email" v-model="form.email" type="email" required placeholder="votre@email.fr" autocomplete="email"
               class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900" />
           </div>
         </div>
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-brun-700 mb-2">Téléphone</label>
-            <input v-model="form.telephone" type="tel" placeholder="06 XX XX XX XX"
+            <label for="contact-tel" class="block text-sm font-medium text-brun-700 mb-2">Téléphone</label>
+            <input id="contact-tel" v-model="form.telephone" type="tel" placeholder="06 XX XX XX XX" autocomplete="tel"
               class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-brun-700 mb-2">Type de demande *</label>
-            <select v-model="form.type" required
+            <label for="contact-type" class="block text-sm font-medium text-brun-700 mb-2">Type de demande *</label>
+            <select id="contact-type" v-model="form.type" required
               class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900 bg-white">
               <option value="" disabled>Choisir…</option>
               <option>Commande spéciale</option>
@@ -169,8 +169,8 @@
           </div>
         </div>
         <div>
-          <label class="block text-sm font-medium text-brun-700 mb-2">Message *</label>
-          <textarea v-model="form.message" required rows="5" placeholder="Décrivez votre demande…"
+          <label for="contact-message" class="block text-sm font-medium text-brun-700 mb-2">Message *</label>
+          <textarea id="contact-message" v-model="form.message" required rows="5" placeholder="Décrivez votre demande…"
             class="w-full px-4 py-3 rounded-xl border border-brun-200 focus:outline-none focus:ring-2 focus:ring-dore-400 focus:border-transparent transition text-brun-900 resize-none" />
         </div>
 
@@ -195,9 +195,9 @@
       <div class="text-center mb-12 reveal">
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Nous venons chez vous</p>
-          <span class="text-dore-400 text-sm">✦</span>
+          <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
         <h2 class="section-title">Zone de livraison</h2>
