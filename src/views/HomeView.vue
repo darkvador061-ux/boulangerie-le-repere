@@ -120,6 +120,8 @@
   <section class="py-24 bg-brun-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Texte -->
         <div class="reveal-left">
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
@@ -131,33 +133,47 @@
             Au Repère, nous allions le charme de l'artisanat traditionnel à une approche
             contemporaine. Chaque produit est façonné avec soin, du fournil jusqu'à votre table.
           </p>
-          <p class="text-brun-600 leading-relaxed mb-8">
+          <p class="text-brun-600 leading-relaxed mb-10">
             Pains, pâtisseries, snacking savoureux… et même la livraison à domicile
             dans 7 communes autour de l'Isle-en-Dodon.
           </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 mb-10">
+            <div class="text-center py-4 px-3 bg-white rounded-2xl border border-brun-100 shadow-sm">
+              <p class="font-serif text-3xl font-bold text-dore-500 leading-none mb-1">6j</p>
+              <p class="text-brun-500 text-xs">Ouvert / 7</p>
+            </div>
+            <div class="text-center py-4 px-3 bg-white rounded-2xl border border-brun-100 shadow-sm">
+              <p class="font-serif text-3xl font-bold text-dore-500 leading-none mb-1">7</p>
+              <p class="text-brun-500 text-xs">Communes livrées</p>
+            </div>
+            <div class="text-center py-4 px-3 bg-white rounded-2xl border border-brun-100 shadow-sm">
+              <p class="font-serif text-3xl font-bold text-dore-500 leading-none mb-1">6h30</p>
+              <p class="text-brun-500 text-xs">Ouverture</p>
+            </div>
+          </div>
+
           <RouterLink to="/contact" class="btn-primary">Nous rendre visite</RouterLink>
         </div>
+
+        <!-- Image avec cadre doré -->
         <div class="relative reveal-right">
+          <!-- Accent décoratif -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-dore-400/15 -z-10" />
+          <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-xl bg-rose-400/10 -z-10" />
           <img
             src="/images/facade-nuit.jpg"
             alt="Devanture de la Boulangerie Le Repère de nuit"
             loading="lazy"
-            class="rounded-2xl shadow-xl w-full object-cover h-96"
+            class="rounded-2xl shadow-2xl w-full object-cover h-[440px]"
           />
-          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-[0_20px_45px_-12px_rgba(24,27,40,0.28)] border border-brun-100 p-6 max-w-xs hidden md:block">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="w-11 h-11 rounded-xl bg-gradient-to-br from-dore-400 to-dore-600 flex items-center justify-center text-white shrink-0 shadow-md shadow-dore-500/30">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
-                </svg>
-              </span>
-              <p class="font-serif text-brun-900 font-bold text-lg leading-tight">Livraison<br />à domicile</p>
-            </div>
-            <p class="text-brun-500 text-sm leading-relaxed">
-              Isle-en-Dodon · Couielles · Riolas · Cazac · Labastide · Fabas · Saint-Frajou
-            </p>
+          <!-- Badge ouverture -->
+          <div class="absolute top-5 right-5 bg-brun-900/80 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10">
+            🕕 Ouvert dès 6h30
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -177,42 +193,52 @@
         <p class="section-subtitle">Du pain frais du matin aux formules midi, tout est fait maison.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 gap-5 mt-12">
         <div
           v-for="(item, i) in specialites"
           :key="item.title"
-          class="group relative bg-white rounded-3xl p-7 text-left overflow-hidden reveal-scale border border-brun-100/70 transition-all duration-500 hover:-translate-y-2 hover:border-dore-200 hover:shadow-[0_28px_56px_-16px_rgba(212,131,26,0.28)]"
+          class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer reveal-scale"
           :data-delay="i * 0.1"
         >
-          <!-- Numéro en filigrane -->
-          <span class="absolute -top-4 right-1 font-serif text-8xl font-bold text-brun-50 select-none pointer-events-none transition-colors duration-500 group-hover:text-dore-100">
-            0{{ i + 1 }}
-          </span>
-          <!-- Icône -->
-          <div class="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-dore-50 to-brun-50 transition-all duration-500 group-hover:from-dore-500 group-hover:to-dore-600 group-hover:shadow-lg group-hover:shadow-dore-500/30 group-hover:scale-105">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-dore-500 transition-all duration-500 group-hover:text-white group-hover:scale-110" v-html="item.svg" />
+          <!-- Image de fond -->
+          <img
+            :src="item.img"
+            :alt="`${item.title} – Boulangerie artisanale Le Repère à l'Isle-en-Dodon`"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <!-- Overlay dégradé -->
+          <div class="absolute inset-0 bg-gradient-to-t from-brun-900/95 via-brun-900/30 to-transparent" />
+          <!-- Numéro watermark -->
+          <span class="absolute top-4 right-5 font-serif text-7xl font-bold text-white/[0.07] select-none leading-none">0{{ i + 1 }}</span>
+          <!-- Icône glassmorphism -->
+          <div class="absolute top-5 left-5 w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-dore-300" v-html="item.svg" />
           </div>
-          <h3 class="relative font-serif text-xl font-bold text-brun-900 mb-2.5">{{ item.title }}</h3>
-          <p class="relative text-brun-500 text-sm leading-relaxed mb-5">{{ item.desc }}</p>
-          <!-- Ligne d'accent animée -->
-          <span class="block h-[3px] w-9 bg-dore-400 rounded-full transition-all duration-500 group-hover:w-20 group-hover:bg-dore-500" />
+          <!-- Contenu bas -->
+          <div class="absolute bottom-0 inset-x-0 p-6">
+            <h3 class="font-serif text-xl font-bold text-white mb-1">{{ item.title }}</h3>
+            <p class="text-brun-200 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">{{ item.desc }}</p>
+            <span class="block h-px w-8 bg-dore-400 mt-3 transition-all duration-500 group-hover:w-16" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== GALERIE PRODUITS ===== -->
-  <section class="py-24 bg-brun-50">
+  <section class="py-24 bg-brun-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14 reveal">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
-          <span class="text-dore-400 text-sm">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Coup d'œil</p>
-          <span class="text-dore-400 text-sm">✦</span>
-          <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="h-px w-12 bg-gradient-to-r from-transparent to-dore-400/60" />
+          <span class="text-dore-400 text-base">✦</span>
+          <p class="text-rose-300 font-medium text-xs tracking-[0.3em] uppercase">Coup d'œil</p>
+          <span class="text-dore-400 text-base">✦</span>
+          <span class="h-px w-12 bg-gradient-to-l from-transparent to-dore-400/60" />
         </div>
-        <h2 class="section-title">Nos créations du moment</h2>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Nos créations <span class="text-dore-400">du moment</span></h2>
+        <p class="text-brun-300 mt-4 text-lg max-w-md mx-auto">Chaque jour, des nouveautés fraîches vous attendent.</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div
@@ -240,14 +266,18 @@
           </div>
         </div>
       </div>
-      <div class="text-center mt-10">
-        <RouterLink to="/pain-patisseries" class="btn-primary">Voir tous nos produits</RouterLink>
+      <div class="text-center mt-12">
+        <RouterLink to="/pain-patisseries"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-brun-900 bg-dore-400 hover:bg-dore-500 transition-colors duration-300 shadow-lg shadow-dore-500/30">
+          Voir tous nos produits
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </RouterLink>
       </div>
     </div>
   </section>
 
-  <!-- Vague : galerie brun-50 → livraison blanc -->
-  <div class="bg-brun-50 overflow-hidden leading-[0]">
+  <!-- Vague : galerie brun-900 → livraison blanc -->
+  <div class="bg-brun-900 overflow-hidden leading-[0]">
     <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 md:h-16 block">
       <path d="M0,24 C400,64 800,0 1200,44 C1320,56 1400,28 1440,20 L1440,64 L0,64 Z" style="fill: #FFFFFF;" />
     </svg>
@@ -294,30 +324,34 @@ import { useReveal } from '../composables/useReveal.js'
 
 useReveal()
 
+const base = import.meta.env.BASE_URL
+
 const specialites = [
   {
     svg: '<path d="M12 22V8"/><path d="M12 8c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 8c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/><path d="M12 13c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 13c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/><path d="M12 18c0-2.3 1.9-4.2 4.4-4.2 0 2.3-2 4.2-4.4 4.2Z"/><path d="M12 18c0-2.3-1.9-4.2-4.4-4.2 0 2.3 2 4.2 4.4 4.2Z"/>',
     title: 'Pains Artisanaux',
     desc: 'Baguettes, pains de campagne, aux céréales, complet… cuits frais chaque matin.',
+    img: base + 'images/photo-interieur.avif',
   },
   {
     svg: '<path d="M5 11a7 7 0 0 1 14 0Z"/><circle cx="12" cy="4.4" r="1.3"/><path d="M6.5 11h11l-1 7.6a1.6 1.6 0 0 1-1.6 1.4H9.1a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M9.6 11.4 9 19"/><path d="M12 11.5v7.8"/><path d="M14.4 11.4 15 19"/>',
     title: 'Pâtisseries',
     desc: 'Entremets, pièces montées et gâteaux personnalisables sur commande.',
+    img: base + 'images/petites-patisseries.jpg',
   },
   {
     svg: '<path d="M7 2v4a2 2 0 0 0 4 0V2"/><path d="M9 8v14"/><path d="M9 2v4"/><path d="M16 2c2.2 0 3.2 3 3.2 6 0 2-1 3-3.2 3"/><path d="M16 2v20"/>',
     title: 'Snacking & Repas',
     desc: 'Pizzas, sandwiches, salades et formules midi complètes à emporter ou sur place.',
+    img: base + 'images/snacking-vitrine.jpg',
   },
   {
     svg: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
     title: 'Livraison',
     desc: 'Service de livraison de pain à domicile dans 7 communes autour du village.',
+    img: base + 'images/facade.jpg',
   },
 ]
-
-const base = import.meta.env.BASE_URL
 const galerie = [
   { src: base + 'images/petites-patisseries.jpg', alt: 'Plateau de petites pâtisseries' },
   { src: base + 'images/eclairs-chocolat.jpg',    alt: 'Éclairs au chocolat maison' },
