@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
     @apply bg-brun-50 text-brun-900 font-sans;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4 {
     @apply font-serif;
