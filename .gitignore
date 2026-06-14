@@ -40,3 +40,10 @@ public/fwphotoboulangerielerepre/
 
 # Fichiers temporaires Vite
 vite.config.js.timestamp-*.mjs
+
+# Audits et captures temporaires
+lighthouse-*.json
+*.png
+*.jpg
+*.jpeg
+!public/**
