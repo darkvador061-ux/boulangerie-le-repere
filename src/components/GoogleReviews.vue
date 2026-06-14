@@ -7,7 +7,7 @@
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Avis clients</p>
+          <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Avis clients</p>
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>

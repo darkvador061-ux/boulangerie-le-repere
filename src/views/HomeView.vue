@@ -106,7 +106,7 @@
   </section>
 
   <!-- ===== BANDEAU INFOS ===== -->
-  <section class="bg-dore-500 text-white">
+  <section class="bg-dore-500 text-brun-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
       <div class="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm font-medium">
         <span class="flex items-center gap-2">🕐 Lun–Mar / Jeu–Sam : 6h30–19h30</span>
@@ -134,7 +134,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
             <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-            <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Notre histoire</p>
+            <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Notre histoire</p>
           </div>
           <h2 class="section-title">Passion &amp; savoir-faire,<br />au cœur du village</h2>
           <p class="text-brun-600 leading-relaxed mb-6">
@@ -197,7 +197,7 @@
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Ce que nous proposons</p>
+          <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Ce que nous proposons</p>
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
@@ -334,7 +334,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
             <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-            <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Service exclusif</p>
+            <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Service exclusif</p>
           </div>
           <h2 class="section-title">Livraison de pain<br />à domicile</h2>
           <p class="text-brun-600 leading-relaxed mb-6">
@@ -358,9 +358,11 @@
 </template>
 
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import { COMMUNES } from '../data/config.js'
-import DeliveryMap from '../components/DeliveryMap.vue'
 import { useReveal } from '../composables/useReveal.js'
+
+const DeliveryMap = defineAsyncComponent(() => import('../components/DeliveryMap.vue'))
 
 useReveal()
 

@@ -27,7 +27,7 @@
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Fait maison</p>
+          <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Fait maison</p>
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
@@ -64,7 +64,7 @@
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Créations uniques</p>
+          <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Créations uniques</p>
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
@@ -148,7 +148,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
             <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-            <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Cuit chaque matin</p>
+            <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Cuit chaque matin</p>
           </div>
           <h2 class="section-title">Une grande variété<br />de pains</h2>
           <p class="text-brun-600 leading-relaxed mb-8">

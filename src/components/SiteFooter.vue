@@ -32,7 +32,7 @@
 
         <!-- Navigation -->
         <div>
-          <h4 class="font-serif text-white font-semibold text-lg mb-5">Navigation</h4>
+          <h3 class="font-serif text-white font-semibold text-lg mb-5">Navigation</h3>
           <ul class="space-y-3">
             <li v-for="link in footerLinks" :key="link.to">
               <RouterLink :to="link.to" class="text-brun-300 hover:text-dore-400 text-sm transition-colors">
@@ -44,7 +44,7 @@
 
         <!-- Contact -->
         <div>
-          <h4 class="font-serif text-white font-semibold text-lg mb-5">Nous trouver</h4>
+          <h3 class="font-serif text-white font-semibold text-lg mb-5">Nous trouver</h3>
           <address class="not-italic">
             <ul class="space-y-4 text-sm text-brun-300">
               <li class="flex gap-3">
@@ -61,7 +61,7 @@
                   <p>Lun – Mar, Jeu – Sam</p>
                   <p>6h30 – 19h30</p>
                   <p class="mt-1">Dimanche 6h30 – 14h30</p>
-                  <p class="text-brun-500 mt-1">Fermé le mercredi</p>
+                  <p class="text-brun-300 mt-1">Fermé le mercredi</p>
                 </div>
               </li>
             </ul>
@@ -69,7 +69,7 @@
         </div>
       </div>
 
-      <div class="border-t border-brun-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brun-500">
+      <div class="border-t border-brun-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brun-300">
         <p>© {{ new Date().getFullYear() }} Boulangerie Le Repère. Tous droits réservés.</p>
         <div class="flex gap-6">
           <RouterLink to="/politique-confidentialite" class="hover:text-brun-300 transition-colors">Confidentialité</RouterLink>

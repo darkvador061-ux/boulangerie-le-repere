@@ -5,7 +5,7 @@
       <div class="flex items-center justify-center gap-3 mb-4">
         <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
         <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-        <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Venez nous voir</p>
+        <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Venez nous voir</p>
         <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
         <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
       </div>
@@ -27,7 +27,7 @@
             <div class="flex items-center gap-3 mb-4">
               <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
               <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-              <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">À votre écoute</p>
+              <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">À votre écoute</p>
             </div>
             <h2 class="font-serif text-3xl font-semibold text-brun-900">Informations pratiques</h2>
           </div>
@@ -119,7 +119,7 @@
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Écrivez-nous</p>
+          <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Écrivez-nous</p>
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
@@ -196,7 +196,7 @@
         <div class="flex items-center justify-center gap-3 mb-4">
           <span class="h-px w-8 bg-gradient-to-r from-transparent to-dore-400/70" />
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
-          <p class="text-rose-500 font-medium text-xs tracking-[0.25em] uppercase">Nous venons chez vous</p>
+          <p class="text-rose-700 font-medium text-xs tracking-[0.25em] uppercase">Nous venons chez vous</p>
           <span class="text-dore-400 text-sm" aria-hidden="true">✦</span>
           <span class="h-px w-8 bg-gradient-to-l from-transparent to-dore-400/70" />
         </div>
