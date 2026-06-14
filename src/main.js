@@ -61,13 +61,30 @@ const router = createRouter({
   scrollBehavior() { return { top: 0 } },
 })
 
-router.afterEach((to) => {
-  document.title = to.meta.title || 'Le Repère – Boulangerie Artisanale à l\'Isle-en-Dodon'
+function setMeta(name, content, attr = 'name') {
+  const tag = document.querySelector(`meta[${attr}="${name}"]`)
+  if (tag && content) tag.setAttribute('content', content)
+}
 
-  if (to.meta.description) {
-    let tag = document.querySelector('meta[name="description"]')
-    if (tag) tag.setAttribute('content', to.meta.description)
-  }
+router.afterEach((to) => {
+  const title = to.meta.title || 'Le Repère – Boulangerie Artisanale à l\'Isle-en-Dodon'
+  const description = to.meta.description || 'Boulangerie Le Repère à l\'Isle-en-Dodon – Pains au levain, viennoiseries maison et pâtisseries artisanales préparées chaque jour avec passion.'
+  const image = to.meta.ogImage || 'https://boulangerielerepere.fr/images/facade-nuit.jpg'
+  const url = `https://boulangerielerepere.fr${to.path === '/' ? '' : to.path}`
+
+  document.title = title
+
+  setMeta('description', description)
+  setMeta('og:title', title, 'property')
+  setMeta('og:description', description, 'property')
+  setMeta('og:url', url, 'property')
+  setMeta('og:image', image, 'property')
+  setMeta('twitter:title', title)
+  setMeta('twitter:description', description)
+  setMeta('twitter:image', image)
+
+  const canonical = document.querySelector('link[rel="canonical"]')
+  if (canonical) canonical.setAttribute('href', url)
 })
 
 createApp(App).use(router).mount('#app')

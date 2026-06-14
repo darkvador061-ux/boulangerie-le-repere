@@ -110,7 +110,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
       <div class="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm font-medium">
         <span class="flex items-center gap-2">🕐 Lun–Mar / Jeu–Sam : 6h30–19h30</span>
-        <span class="flex items-center gap-2">☀️ Dimanche : 6h30–19h30</span>
+        <span class="flex items-center gap-2">☀️ Dimanche : 6h30–14h30</span>
         <span class="flex items-center gap-2">❌ Fermé le mercredi</span>
         <a href="tel:0561896070" class="flex items-center gap-2 hover:underline">📞 05 61 89 60 70</a>
       </div>

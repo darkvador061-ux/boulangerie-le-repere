@@ -19,7 +19,7 @@ export const HORAIRES = [
   { jour: 'Jeudi',     heure: '6h30 – 19h30' },
   { jour: 'Vendredi',  heure: '6h30 – 19h30' },
   { jour: 'Samedi',    heure: '6h30 – 19h30' },
-  { jour: 'Dimanche',  heure: '6h30 – 19h30' },
+  { jour: 'Dimanche',  heure: '6h30 – 14h30' },
 ]
 
 export const NAV_LINKS = [
