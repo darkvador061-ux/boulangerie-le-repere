@@ -60,7 +60,7 @@
                 <div>
                   <p>Lun – Mar, Jeu – Sam</p>
                   <p>6h30 – 19h30</p>
-                  <p class="mt-1">Dimanche 6h30 – 19h30</p>
+                  <p class="mt-1">Dimanche 6h30 – 14h30</p>
                   <p class="text-brun-500 mt-1">Fermé le mercredi</p>
                 </div>
               </li>
