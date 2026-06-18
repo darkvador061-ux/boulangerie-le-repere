@@ -1,4 +1,5 @@
 <template>
+  <PromoPopup />
   <NavBar />
   <main>
     <RouterView />
@@ -11,4 +12,5 @@
 import NavBar        from './components/NavBar.vue'
 import SiteFooter    from './components/SiteFooter.vue'
 import GoogleReviews from './components/GoogleReviews.vue'
+import PromoPopup    from './components/PromoPopup.vue'
 </script>
