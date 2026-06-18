@@ -10,6 +10,15 @@
         <p>Le service de livraison de pain est disponible dans un rayon d'1 km autour de l'Isle-en-Dodon. Les modalités de livraison (créneaux horaires, frais éventuels) sont à définir directement avec notre équipe par téléphone.</p>
         <h2 class="font-serif text-2xl font-semibold text-brun-900 mt-8">Prix</h2>
         <p>Les prix sont indiqués en euros TTC. La Boulangerie Le Repère se réserve le droit de modifier ses tarifs à tout moment.</p>
+        <h2 class="font-serif text-2xl font-semibold text-brun-900 mt-8">Médiation de la consommation</h2>
+        <p>Conformément aux articles L. 611-1 et suivants du Code de la consommation, tout consommateur peut recourir gratuitement au médiateur de la consommation en vue de la résolution amiable d'un litige. La SARL LE REPERE a désigné :</p>
+        <p>
+          <strong>CNPM – MÉDIATION – CONSOMMATION</strong><br />
+          27 avenue de la Libération – 42400 Saint-Chamond<br />
+          <a href="https://www.cnpm-mediation-consommation.eu" target="_blank" rel="noopener" class="text-dore-600 hover:underline">www.cnpm-mediation-consommation.eu</a>
+        </p>
+        <p>Pour saisir le médiateur, le client doit au préalable avoir tenté de résoudre son litige directement auprès de la boulangerie par courrier ou par téléphone.</p>
+
         <h2 class="font-serif text-2xl font-semibold text-brun-900 mt-8">Litiges</h2>
         <p>En cas de litige, les parties s'engagent à rechercher une solution amiable. À défaut, le tribunal compétent sera celui de Toulouse.</p>
       </div>

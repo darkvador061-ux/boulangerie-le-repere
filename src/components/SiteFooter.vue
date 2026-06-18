@@ -72,6 +72,7 @@
       <div class="border-t border-brun-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brun-300">
         <p>© {{ new Date().getFullYear() }} Boulangerie Le Repère. Tous droits réservés.</p>
         <div class="flex gap-6">
+          <RouterLink to="/mentions-legales"          class="hover:text-brun-300 transition-colors">Mentions légales</RouterLink>
           <RouterLink to="/politique-confidentialite" class="hover:text-brun-300 transition-colors">Confidentialité</RouterLink>
           <RouterLink to="/conditions-generales"     class="hover:text-brun-300 transition-colors">CGV</RouterLink>
           <RouterLink to="/rgpd"                     class="hover:text-brun-300 transition-colors">RGPD</RouterLink>

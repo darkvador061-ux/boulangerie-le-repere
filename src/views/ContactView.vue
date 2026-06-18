@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <!-- Carte Google Maps intégrée -->
+        <!-- Carte Google Maps -->
         <div class="rounded-3xl overflow-hidden shadow-xl h-full min-h-96 reveal-right">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.6!2d0.8548!3d43.3873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aec5b1234567%3A0x1!2s3%20le%20Pont%20Neuf%2C%2031230%20L%27Isle-en-Dodon!5e0!3m2!1sfr!2sfr!4v1234567890"
@@ -185,6 +185,10 @@
           </button>
           <p class="text-xs text-brun-400">* Champs obligatoires</p>
         </div>
+        <p class="text-xs text-brun-400 leading-relaxed">
+          Les données collectées sont utilisées uniquement pour répondre à votre demande et sont traitées par Formspree.
+          <RouterLink to="/politique-confidentialite" class="underline hover:text-dore-600 transition-colors">Politique de confidentialité</RouterLink>.
+        </p>
       </form>
     </div>
   </section>
@@ -226,7 +230,6 @@
 import { ref } from 'vue'
 import { COMMUNES, HORAIRES, SOCIAL_LINKS } from '../data/config.js'
 import { useReveal } from '../composables/useReveal.js'
-
 useReveal()
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/VOTRE_ID_FORMSPREE'

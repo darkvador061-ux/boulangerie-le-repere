@@ -41,17 +41,22 @@ const routes = [
   {
     path: '/politique-confidentialite',
     component: () => import('./views/PolitiqueView.vue'),
-    meta: { title: 'Politique de confidentialité – Le Repère', description: '' },
+    meta: { title: 'Politique de confidentialité – Le Repère', description: 'Politique de confidentialité et protection de vos données personnelles – Boulangerie Le Repère à l\'Isle-en-Dodon.' },
   },
   {
     path: '/conditions-generales',
     component: () => import('./views/CGVView.vue'),
-    meta: { title: 'Conditions générales de vente – Le Repère', description: '' },
+    meta: { title: 'Conditions générales de vente – Le Repère', description: 'Conditions générales de vente de la Boulangerie Le Repère : commandes spéciales, livraison, prix et modalités de paiement.' },
   },
   {
     path: '/rgpd',
     component: () => import('./views/RGPDView.vue'),
-    meta: { title: 'Mentions RGPD – Le Repère', description: '' },
+    meta: { title: 'RGPD – Le Repère', description: 'Informations relatives au traitement de vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD).' },
+  },
+  {
+    path: '/mentions-legales',
+    component: () => import('./views/MentionsLegalesView.vue'),
+    meta: { title: 'Mentions légales – Le Repère', description: 'Mentions légales de la Boulangerie Le Repère : éditeur, directeurs de publication, hébergeur et informations légales obligatoires.' },
   },
 ]
 
