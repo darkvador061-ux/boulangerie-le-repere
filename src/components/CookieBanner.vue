@@ -21,7 +21,7 @@
             </button>
             <button
               @click="accept"
-              class="px-5 py-2 rounded-full bg-dore-500 hover:bg-dore-400 text-white text-sm font-medium transition-colors"
+              class="px-5 py-2 rounded-full bg-dore-700 hover:bg-dore-600 text-white text-sm font-medium transition-colors"
             >
               Accepter
             </button>
