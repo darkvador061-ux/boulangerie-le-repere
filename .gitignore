@@ -41,6 +41,9 @@ public/fwphotoboulangerielerepre/
 # Fichiers temporaires Vite
 vite.config.js.timestamp-*.mjs
 
+# Graphify (knowledge graph local, non versionné)
+graphify-out/
+
 # Audits et captures temporaires
 lighthouse-*.json
 *.png

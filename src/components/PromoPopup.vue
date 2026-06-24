@@ -1,28 +1,79 @@
 <template>
+  <!-- Popup pleine -->
   <Transition name="fade">
-    <div v-if="visible" class="overlay" @click.self="fermer">
+    <div v-if="visible" class="overlay" @click.self="reduire">
       <div class="popup">
-        <button class="popup-close" @click="fermer" aria-label="Fermer">×</button>
+        <button class="popup-close" @click="reduire" aria-label="Réduire">×</button>
 
-        <div class="popup-img-wrap">
-          <img :src="base + PROMO.image" :alt="PROMO.titre" loading="eager" />
-          <div class="popup-img-overlay"></div>
-          <span class="popup-badge">{{ PROMO.badge }}</span>
-          <h2 class="popup-titre">{{ PROMO.titre }}</h2>
-        </div>
+        <!-- Vue principale -->
+          <div v-if="!detail">
+            <div class="popup-img-wrap">
+              <img :src="base + PROMO.image" :alt="PROMO.titre" loading="eager" />
+              <div class="popup-img-overlay"></div>
+              <span class="popup-badge">{{ PROMO.badge }}</span>
+              <h2 class="popup-titre">{{ PROMO.titre }}</h2>
+            </div>
 
-        <div class="popup-body">
-          <p class="popup-sous">{{ PROMO.sous }}</p>
-          <p class="popup-dates">{{ PROMO.dates }}</p>
-          <div class="popup-actions">
-            <RouterLink :to="PROMO.ctaLien" class="btn-primary" @click="fermer">
-              {{ PROMO.cta }}
-            </RouterLink>
-            <button class="btn-secondary" @click="fermer">Fermer</button>
+            <div class="popup-body">
+              <p class="popup-sous">{{ PROMO.sous }}</p>
+              <p class="popup-dates">{{ PROMO.dates }}</p>
+              <div class="popup-actions">
+                <button class="btn-primary" @click="detail = true">
+                  {{ PROMO.cta }}
+                </button>
+                <button class="btn-secondary" @click="reduire">Réduire</button>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <!-- Vue détail -->
+          <div v-else class="popup-detail">
+            <div class="detail-header">
+              <button class="detail-back" @click="detail = false" aria-label="Retour">
+                ← Retour
+              </button>
+              <span class="popup-badge detail-badge">{{ PROMO.badge }}</span>
+            </div>
+
+            <div class="detail-body">
+              <h3 class="detail-titre">{{ PROMO.titre }}</h3>
+              <p class="detail-dates">{{ PROMO.dates }}</p>
+
+              <div class="detail-section">
+                <p class="detail-section-title">Comment participer</p>
+                <p class="detail-text">{{ PROMO.detail.comment }}</p>
+              </div>
+
+              <div class="detail-section">
+                <p class="detail-section-title">Lots à gagner</p>
+                <ul class="detail-lots">
+                  <li v-for="lot in PROMO.detail.lots" :key="lot.label" class="detail-lot">
+                    <span class="lot-emoji">{{ lot.emoji }}</span>
+                    <span class="lot-info">
+                      <strong>{{ lot.label }}</strong>
+                      <span>{{ lot.description }}</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="detail-conditions">{{ PROMO.detail.conditions }}</p>
+
+              <button class="btn-primary btn-full" @click="reduire">
+                Fermer
+              </button>
+            </div>
+          </div>
       </div>
     </div>
+  </Transition>
+
+  <!-- Badge flottant quand réduit -->
+  <Transition name="slide-badge">
+    <button v-if="reduit" class="floating-badge" @click="rouvrir" :aria-label="PROMO.titre">
+      <span class="floating-badge-icon">🎟️</span>
+      <span class="floating-badge-label">{{ PROMO.titre }}</span>
+    </button>
   </Transition>
 </template>
 
@@ -34,16 +85,26 @@ const base = import.meta.env.BASE_URL
 
 function estActif() {
   if (!PROMO.active) return false
-  const now  = new Date()
-  const fin  = new Date(PROMO.dateFin)
+  const now = new Date()
+  const fin = new Date(PROMO.dateFin)
   fin.setHours(23, 59, 59)
   return now >= new Date(PROMO.dateDebut) && now <= fin
 }
 
-const visible = ref(estActif())
+const actif   = estActif()
+const visible = ref(actif)
+const reduit  = ref(false)
+const detail  = ref(false)
 
-function fermer() {
+function reduire() {
   visible.value = false
+  reduit.value  = true
+  detail.value  = false
+}
+
+function rouvrir() {
+  reduit.value  = false
+  visible.value = true
 }
 </script>
 
@@ -71,6 +132,7 @@ function fermer() {
   overflow-y: auto;
 }
 
+/* Vue principale */
 .popup-img-wrap {
   position: relative;
   height: 260px;
@@ -172,6 +234,7 @@ function fermer() {
   transition: color 0.2s;
 }
 .btn-secondary:hover { color: #444; }
+.btn-full { width: 100%; margin-top: 1.25rem; flex: none; min-width: unset; }
 
 .popup-close {
   position: absolute;
@@ -193,11 +256,160 @@ function fermer() {
 }
 .popup-close:hover { background: rgba(0,0,0,0.65); }
 
-/* transition */
+/* Vue détail */
+.popup-detail { font-family: Georgia, serif; }
+
+.detail-header {
+  position: relative;
+  background: #1a1a1a;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail-back {
+  background: transparent;
+  color: rgba(255,255,255,0.75);
+  border: none;
+  font-size: 0.82rem;
+  font-family: sans-serif;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+.detail-back:hover { color: white; }
+.detail-badge {
+  position: static;
+  font-size: 0.62rem;
+}
+
+.detail-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+.detail-titre {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+.detail-dates {
+  color: #c8922a;
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.detail-section { margin-bottom: 1.5rem; }
+.detail-section-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  font-family: sans-serif;
+  margin-bottom: 0.6rem;
+  font-style: normal;
+}
+.detail-text {
+  color: #444;
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.detail-lots {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.detail-lot {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #faf8f4;
+  border-left: 3px solid #c8922a;
+  border-radius: 0 2px 2px 0;
+}
+.lot-emoji { font-size: 1.2rem; line-height: 1; flex-shrink: 0; margin-top: 0.1rem; }
+.lot-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.lot-info strong {
+  font-size: 0.82rem;
+  color: #c8922a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+.lot-info span {
+  font-size: 0.9rem;
+  color: #333;
+  font-style: italic;
+}
+
+.detail-conditions {
+  font-size: 0.74rem;
+  color: #aaa;
+  font-family: sans-serif;
+  font-style: normal;
+  line-height: 1.5;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Badge flottant */
+.floating-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #c8922a;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.65rem 1.1rem 0.65rem 0.85rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  max-width: 220px;
+  transition: background 0.2s, transform 0.2s;
+}
+.floating-badge:hover {
+  background: #a87220;
+  transform: translateY(-2px);
+}
+.floating-badge-icon { font-size: 1.1rem; flex-shrink: 0; }
+.floating-badge-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Transitions */
 .fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease; }
 .fade-enter-from, .fade-leave-to { opacity: 0; }
 
-/* responsive mobile */
+.slide-badge-enter-active { transition: opacity 0.3s ease, transform 0.3s ease; }
+.slide-badge-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
+.slide-badge-enter-from, .slide-badge-leave-to { opacity: 0; transform: translateY(1rem); }
+
+/* Responsive mobile */
 @media (max-width: 480px) {
   .overlay { align-items: flex-end; padding: 0; }
   .popup {
@@ -209,5 +421,6 @@ function fermer() {
   .popup-body { padding: 1rem 1.25rem 1.5rem; }
   .popup-actions { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; }
+  .detail-body { padding: 1.25rem 1.25rem 1.5rem; }
 }
 </style>

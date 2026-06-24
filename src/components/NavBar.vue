@@ -30,7 +30,7 @@
         </RouterLink>
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-8">
+        <nav class="hidden lg:flex items-center gap-8">
           <RouterLink
             v-for="link in navLinks"
             :key="link.to"
@@ -50,7 +50,7 @@
 
         <!-- Mobile burger -->
         <button
-          class="md:hidden p-2 rounded-lg"
+          class="lg:hidden p-2 rounded-lg"
           :class="isDark ? 'text-white' : 'text-brun-900'"
           @click="menuOpen = !menuOpen"
           aria-label="Menu"
@@ -64,7 +64,7 @@
 
     <!-- Mobile menu -->
     <Transition name="slide">
-      <div v-if="menuOpen" class="md:hidden bg-white border-t border-brun-100 px-4 pb-6 pt-2">
+      <div v-if="menuOpen" class="lg:hidden bg-white border-t border-brun-100 px-4 pb-6 pt-2">
         <nav class="flex flex-col gap-4">
           <RouterLink
             v-for="link in navLinks"

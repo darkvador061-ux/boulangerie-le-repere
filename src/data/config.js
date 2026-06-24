@@ -23,16 +23,24 @@ export const HORAIRES = [
 ]
 
 export const PROMO = {
-  active:    false,          // ← mettre true pour activer
-  dateDebut: '2025-12-18',
-  dateFin:   '2025-12-24',
-  badge:     'Offre spéciale',
-  titre:     'Bûches de Noël artisanales',
-  sous:      'Chocolat, fruits rouges ou praliné — sur commande',
-  dates:     'Disponibles du 18 au 24 décembre',
-  cta:       'Nous contacter',
-  ctaLien:   '/contact',
-  image:     '/images/mignardises-vitrine.jpg', // ← remplacer par la vraie photo promo
+  active:    true,
+  dateDebut: '2026-01-01',
+  dateFin:   '2026-12-31',
+  badge:     '🎟️ Tombola',
+  titre:     'Grande Tombola de Printemps',
+  sous:      'Tentez votre chance ! Un ticket offert pour tout achat en boutique.',
+  dates:     'Du 1er juillet au 10 juillet — tirage le 11 juillet',
+  cta:       'En savoir plus',
+  image:     '/images promo/1.webp',
+  detail: {
+    comment: 'Pour chaque achat en boutique, recevez un ticket numéroté. Conservez-le précieusement — plus vous achetez, plus vous multipliez vos chances !',
+    lots: [
+      { emoji: '🥇', label: '1er prix', description: 'Panier gourmand maison (valeur 80 €)' },
+      { emoji: '🥈', label: '2e prix',  description: 'Abonnement pain artisanal 1 mois' },
+      { emoji: '🥉', label: '3e prix',  description: 'Box pâtisseries & viennoiseries maison' },
+    ],
+    conditions: "Jeu sans obligation d'achat. Règlement complet disponible en boutique. Tirage au sort le 30 avril 2026.",
+  },
 }
 
 export const NAV_LINKS = [
